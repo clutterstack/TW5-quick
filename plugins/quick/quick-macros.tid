@@ -1,9 +1,9 @@
 title: $:/plugins/can/quicks/quick-macros
-
+tags: $:/tags/Macro
 \define quickbutton(buttonstyle)
 <div>
 <$button class="tc-btn-invisible tc-can-bigbutton $buttonstyle$" actions="<<submit-actions>> <<reset-actions>>">
-{{quick-add-big-button.svg}}
+{{$:/plugins/can/quick/quick-add-big-button.svg}}
 </$button>
 </div>
 \end
@@ -56,5 +56,5 @@ title: $:/plugins/can/quicks/quick-macros
 \end
 
 \define can-quicknote()
-<$macrocall $name="quickadd" tags="quicknote" buttonstyle="big"/>
+<$macrocall $name="quickadd14" tags="quicknote" buttonstyle="big"/>
 \end

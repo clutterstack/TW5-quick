@@ -1,0 +1,33 @@
+created: 20200517134909443
+creator: chris
+modified: 20200704025415240
+modifier: chris
+tags: 
+title: $:/plugins/can/quick/quick-add-button.svg
+type: text/vnd.tiddlywiki
+
+<svg class="tc-image-button" height="22pt" width="22pt" viewBox="0 0 55 55">
+    <g
+    transform="translate(272.23164,58.233013)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+        <path
+           transform="rotate(46.577289,-159.2453,23.947788)"
+           inkscape:original-d="m -258.68181,9.4516932 -5.73324,15.4469248 4.0326,-0.933085 0.1742,37.317431 c -1.35265,1.566997 -1.8121,3.160143 -1.8121,3.160143 -0.11314,2.868561 0.95998,6.631241 1.05307,8.762376 0.98287,0.106825 1.56182,-0.225604 1.81888,-0.05188 l 0.0867,2.556541 0.72437,0.110227"
+           style="fill:#000000;fill-opacity:1;stroke:#680000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -258.68574,9.4622796 -5.72931,15.4363384 4.0326,-0.933085 0.1742,37.317431 c -1.35265,1.566997 -1.8121,3.160143 -1.8121,3.160143 -0.11314,2.868561 0.95998,6.631241 1.05307,8.762376 0.98287,0.106825 1.56182,-0.225604 1.81888,-0.05188 l 0.0867,2.556541 0.38252,0.05821 0.38251,-0.05828 0.0862,-2.556558 c 0.25702,-0.173775 0.83604,0.15854 1.81889,0.05152 0.0927,-2.131153 1.16504,-5.894045 1.05133,-8.762584 0,0 -0.45976,-1.593055 -1.81272,-3.159784 l 0.16681,-37.317465 4.03279,0.932287 z"
+           id="path914-1-3-1-2-1"
+           sodipodi:nodetypes="ccccccccc" />
+        <path
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -271.72257,-57.072874 c 12.6631,9.009276 25.02666,1.739112 36.01494,8.191443 l 3.38653,4.544018 4.44549,3.083572 c 5.01097,10.523166 -0.88676,27.252204 4.58482,35.8753865 -1.39365,-0.031348 -1.5399,-0.059342 -1.58943,-0.1209212 -7.49954,-9.3232583 -2.63164,-22.3715353 -6.64453,-32.5261993 l -4.04825,-3.374594 -3.62625,-4.228358 c -11.69832,-5.547814 -23.21324,-0.548631 -32.50865,-9.946928 -0.0411,-0.983034 4.1e-4,-0.654186 -0.0147,-1.497419 z"
+           id="path910-0-2-5"
+           sodipodi:nodetypes="cccccsccccc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -269.13343,-54.493176 2.86052,43.104861 40.71544,2.9845762"
+           id="path912-1-9-2"
+           sodipodi:nodetypes="ccc" />
+      </g>
+</svg>
