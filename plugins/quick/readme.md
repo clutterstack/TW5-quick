@@ -1,0 +1,24 @@
+The Quick Notes plugin for TiddlyWiki is meant to make it easier to jot small bits of information into a TiddlyWiki.
+
+It's a lot like using a New Journal button, but the experience is tweaked to reduce cognitive overhead and the number of UI interactions.
+
+This plugin provides the following macros:
+
+```
+quickadd(tags:"" focus:"true" omniparent:"" buttonstyle:"small" endstate:"open")
+```
+
+```
+<<arrownote>>
+<$macrocall $name="quickadd" tags="quickadd" buttonstyle="big"/>
+```
+
+Tiddlers created from the quickadd or arrownote interface are given a title which is their `created` field expressed in `[UTC]YYYY0MM0DD0hh0mm0ss0XXX` format, unless the user specifies a title.
+
+`omnilabel`: Because a string of digits doesn't give much info on the tiddler contents, this macro generates a label for each tiddler which can be used 
+
+There is also:
+
+* a toolbar button to reveal a tiddler (pinned above the storylist) from which to (repeatedly, if desired) create tiddlers using `arrownote`.
+* a tweak to the core timeline macro to use `<<omnilabel>>` instead of the tiddler's title in the timeline macro -- which is used by the "Recent" sidebar tab.
+* a tiddler tagged `$:/tags/SideBar` which lists all (non-system, non-shadow) tiddlers by their `omnilabel`.

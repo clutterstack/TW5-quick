@@ -4,7 +4,7 @@ tags: $:/tags/Macro
 \define quickbutton(buttonstyle)
 <div>
 <$button class="tc-btn-invisible can-omni-button $buttonstyle$" actions="<<submit-actions>> <<reset-actions>>">
-{{$:/plugins/can/quick/quick-add-big-button.svg}}
+{{$:/plugins/can/quick/quickadd-big-button.svg}}
 </$button>
 </div>
 \end

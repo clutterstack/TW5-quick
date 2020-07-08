@@ -3,7 +3,7 @@ creator: chris
 modified: 20200704025415240
 modifier: chris
 tags: 
-title: $:/plugins/can/quick/quick-add-button.svg
+title: $:/plugins/can/quick/quickadd-button.svg
 type: text/vnd.tiddlywiki
 
 <svg class="tc-image-button" height="22pt" width="22pt" viewBox="0 0 55 55">

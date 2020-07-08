@@ -1,16 +1,16 @@
 tags: $:/tags/PageControls
-title: $:/plugins/can/quick/quicknote-button
+title: $:/plugins/can/quick/arrownote-button
 
 \define visible-state() 
-$:/state/can/quick/visibility/QuickNoteAdder
+$:/state/can/quick/visibility/ArrowNoteAdder
 \end
 <$button class="tc-btn-invisible">
 <$reveal type="nomatch" stateTitle=<<visible-state>> text="hide" default="show">
 <$action-setfield $tiddler=<<visible-state>> $value="hide"/>
-{{$:/plugins/can/quick/quick-add-toolbar-btn-dark.svg}}
+{{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}}
 </$reveal>
 <$reveal type="match" stateTitle=<<visible-state>> text="hide" default="show">
 <$action-setfield $tiddler=<<visible-state>> $value="show"/>
-{{$:/plugins/can/quick/quick-add-toolbar-btn-light.svg}}
+{{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}}
 </$reveal>
 </$button>
