@@ -1,0 +1,34 @@
+title: MacroList
+
+Non-shadow macros available throughout this TW
+<table>
+<tr>
+<th>Macros</th>
+<th>Location</th></tr>
+<$list filter="""[all[tiddlers]tag[$:/tags/Macro]search[\define]]""">
+<tr>
+<td>
+<$list filter="[<currentTiddler>get[text]splitregexp[\n]removeprefix[\define]splitbefore[(]removesuffix[(]]">
+<$view field=title/><br>
+</$list>
+</td><td><$link/></td>
+</tr>
+</$list>
+</table>
+
+Macros defined in shadow tiddlers
+<table>
+<tr>
+<th>Macros</th>
+<th>Location</th></tr>
+<$list filter="""[all[shadows]tag[$:/tags/Macro]search[\define]]""">
+<tr>
+<td>
+<$list filter="[<currentTiddler>get[text]splitregexp[\n]removeprefix[\define]splitbefore[(]removesuffix[(]]">
+<$view field=title/><br>
+</$list>
+</td>
+<td><$link/></td>
+</tr>
+</$list>
+</table>

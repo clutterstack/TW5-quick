@@ -1,0 +1,17 @@
+tags: $:/tags/PageControls
+title: $:/plugins/can/quick/quicknote-button
+
+\define visible-state() $:/state/can/quick/visibility/QuickNoteAdder
+
+<$reveal type="nomatch" stateTitle=<<visible-state>> text="hide" default="show">
+<$button class=<<tv-config-toolbar-class>>>
+<$action-setfield $tiddler=<<visible-state>> $value="hide"/>
+{{$:/plugins/can/quick/quick-add-toolbar-btn-dark}}
+</$button>
+</$reveal>
+<$reveal type="match" stateTitle=<<visible-state>> text="hide" default="show">
+<$button class=<<tv-config-toolbar-class>>>
+<$action-setfield $tiddler=<<visible-state>> $value="show"/>
+{{$:/plugins/can/quick/quick-add-toolbar-btn-light}}
+</$button>
+</$reveal>

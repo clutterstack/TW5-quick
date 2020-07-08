@@ -1,4 +1,4 @@
-title: $:/plugins/can/quicks/quick-macros
+title: $:/plugins/can/quick/quick-macros
 tags: $:/tags/Macro
 
 \define quickbutton(buttonstyle)

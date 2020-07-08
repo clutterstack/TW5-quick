@@ -1,0 +1,12 @@
+tags: $:/tags/Macro
+title: $:/plugins/can/quick/timeline-tweak
+
+\define timeline-title()
+\whitespace trim
+<!-- Override this macro with a global macro 
+     of the same name if you need to change 
+     how titles are displayed on the timeline 
+	(CAN says: OK, I did)
+     -->
+<<omnilabel chars:200>>
+\end

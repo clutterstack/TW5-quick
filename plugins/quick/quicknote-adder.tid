@@ -1,0 +1,9 @@
+created: 20200707225108697
+tags: $:/tags/AboveStory
+title: QuickNoteAdder
+
+\define visible-state() $:/state/can/quick/visibility/QuickNoteAdder
+
+<$reveal type="nomatch" stateTitle=<<visible-state>> text="hide" default="show">
+<<can-quicknote>>
+</$reveal>
