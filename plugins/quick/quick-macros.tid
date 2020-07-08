@@ -3,31 +3,30 @@ tags: $:/tags/Macro
 
 \define quickbutton(buttonstyle)
 <div>
-<$button class="tc-btn-invisible tc-can-bigbutton $buttonstyle$" actions="<<submit-actions>> <<reset-actions>>">
+<$button class="tc-btn-invisible can-omni-button $buttonstyle$" actions="<<submit-actions>> <<reset-actions>>">
 {{$:/plugins/can/quick/quick-add-big-button.svg}}
 </$button>
 </div>
 \end
 
+\define quickresetbutton()<$button class="can-omni-button tc-btn-invisible" actions=<<reset-actions>> >{{$:/plugins/can/quick/escape.svg}}</$button>
+
 \define quicktitle()
 <div class="can-quickadd-titleadder">
-<$reveal type="match" stateTitle=<<quickstate>> stateField="edittitle" text="" default="">
-<div class="can-omni-icon" >{{$:/plugins/can/quick/title-page.svg}}</div>
-</$reveal>
+<$keyboard tag="div" class="can-keyboard-wide" key="ctrl-enter" actions='<<submit-actions>><<reset-actions>>' >
+<$keyboard tag="div" class="can-keyboard-wide" key="escape" actions="<$action-setfield $tiddler=<<quickstate>> $field='edittitle' /> <$action-setfield quickadd-titletoggle='display'/>">
+<$edit-text class="can-quickadd-titleedit" tiddler=<<quickstate>> field=edittitle placeholder="Add a title"/>
+</$keyboard></$keyboard>
 <$reveal type="nomatch" stateTitle=<<quickstate>> stateField="edittitle" text="">
 <$button class="can-omni-button tc-btn-invisible" actions="<$action-setfield $tiddler=<<quickstate>> $field='edittitle' /><$action-setfield quickadd-titletoggle='display'/>">{{$:/plugins/can/quick/escape.svg}}</$button>
 </$reveal>
-<$keyboard tag="div" class="tc-can-keyboard" key="ctrl-enter" actions='<<submit-actions>><<reset-actions>>' >
-<$keyboard tag="div" class="tc-can-keyboard" key="escape" actions="<$action-setfield $tiddler=<<quickstate>> $field='edittitle' /> <$action-setfield quickadd-titletoggle='display'/>">
-<$edit-text class="can-quickadd-titleedit" tiddler=<<quickstate>> field=edittitle placeholder="Add a title"/>
-</$keyboard></$keyboard>
 </div>
 \end
 
 \define quicktext()
-<$keyboard tag="div" class="tc-can-keyboard" key="ctrl-enter" actions="<<submit-actions>> <<reset-actions>>" >
-<$keyboard tag="div" class="tc-can-keyboard" key="escape" actions="<<reset-actions>> <$action-setfield quickadd-addtoggle=<<__endstate__>> >" >
-<$edit-text class="can-quickadd-textarea" tiddler=<<quickstate>> field='text' default='' placeholder='Another One Bites the Dust' focus=<<focus>>/>
+<$keyboard tag="div" class="can-keyboard-wide" key="ctrl-enter" actions="<<submit-actions>> <<reset-actions>>" >
+<$keyboard tag="div" class="can-keyboard-wide" key="escape" actions="<<reset-actions>> <$action-setfield quickadd-addtoggle=<<__endstate__>> >" >
+<$edit-text class="can-quickadd-textarea" tiddler=<<quickstate>> field="text" default="" placeholder="Another One Bites the Dust" focus=<<focus>>/>
 </$keyboard></$keyboard>
 \end
 
@@ -43,15 +42,13 @@ tags: $:/tags/Macro
 	<$set name=omniParBrak filter="[<omniParent>]">
 	<$set name="submit-actions" value="<$tiddler tiddler=<<quickstate>> ><$set name=theTime value=<<now [UTC]YYYY0MM0DD0hh0mm0ss0XXX>>><$set name=newtitle value={{!!edittitle}} emptyValue=<<theTime>> ><$action-setfield newtitle=<<newtitle>>/><$action-createtiddler $basetitle={{!!newtitle}} $savetitle=!!savetitle text={{!!text}} tags=<<subTags>> created=<<theTime>> omniparent=<<omniParBrak>> /><$action-listops $tiddler=<<__omniparent__>> $subfilter='+[insertbefore:contTiddlerFilt{!!savetitle}] +[move{!!savetitle}]'/><$action-setfield $tiddler=<<contTiddler>> quickadd-addtoggle=$endstate$ $timestamp='no'/></$set></$set></$tiddler>">
 	<$set name="reset-actions" value="<$tiddler tiddler=<<quickstate>> ><$action-setfield $field=edittitle/><$action-setfield text=''/><$action-setfield $tiddler=<<contTiddler>> quickadd-addtoggle=$endstate$ $timestamp='no' /><$action-setfield quickadd-titletoggle='hide'/></$tiddler>" >
+	<<quickresetbutton>>
 	<<quicktext>>
 	<div class="can-quickadd-btmrow">
 	<<quicktitle>>
-	<$button class="tc-btn-invisible" actions=<<reset-actions>> >{{$:/plugins/can/quick/escape.svg}}</$button>
 	<<quickbutton buttonstyle:$buttonstyle$ >>
 	</div>
-	</$set></$set>
-	</$set></$set>
-	</$vars>
+	</$set></$set></$set></$set></$vars>
 </div></$set></$set></$set>
 \end
 
