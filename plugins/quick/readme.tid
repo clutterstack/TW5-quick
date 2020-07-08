@@ -1,0 +1,8 @@
+title: $:/plugins/can/quick/readme
+
+The Quick Notes plugin for TiddlyWiki is meant to make it easier to jot small bits of information into a TiddlyWiki.
+
+It's a lot like using a New Journal button, but the experience is tweaked to reduce cognitive overhead and the number of UI interactions.
+
+!! Macros:
+

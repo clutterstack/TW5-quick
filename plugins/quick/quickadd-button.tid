@@ -7,10 +7,10 @@ $:/state/can/quick/visibility/QuickNoteAdder
 <$button class="tc-btn-invisible">
 <$reveal type="nomatch" stateTitle=<<visible-state>> text="hide" default="show">
 <$action-setfield $tiddler=<<visible-state>> $value="hide"/>
-{{$:/plugins/can/quick/quick-add-toolbar-btn-dark}}
+{{$:/plugins/can/quick/quick-add-toolbar-btn-dark.svg}}
 </$reveal>
 <$reveal type="match" stateTitle=<<visible-state>> text="hide" default="show">
 <$action-setfield $tiddler=<<visible-state>> $value="show"/>
-{{$:/plugins/can/quick/quick-add-toolbar-btn-light}}
+{{$:/plugins/can/quick/quick-add-toolbar-btn-light.svg}}
 </$reveal>
 </$button>

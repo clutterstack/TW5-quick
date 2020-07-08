@@ -52,6 +52,6 @@ tags: $:/tags/Macro
 </div></$set></$set></$set>
 \end
 
-\define can-quicknote()
-<$macrocall $name="quickadd" tags="quicknote" buttonstyle="big"/>
+\define arrownote()
+<$macrocall $name="quickadd" tags="quickadd" buttonstyle="big"/>
 \end
