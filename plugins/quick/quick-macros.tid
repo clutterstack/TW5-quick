@@ -1,5 +1,6 @@
 title: $:/plugins/can/quicks/quick-macros
 tags: $:/tags/Macro
+
 \define quickbutton(buttonstyle)
 <div>
 <$button class="tc-btn-invisible tc-can-bigbutton $buttonstyle$" actions="<<submit-actions>> <<reset-actions>>">
@@ -9,16 +10,15 @@ tags: $:/tags/Macro
 \end
 
 \define quicktitle()
-<$link to={{!!edittitle}}/><br>
 <div class="can-quickadd-titleadder">
-<$reveal type="match" stateTitle="<<quickstate>>" stateField="!!edittitle" text="" default="">
-<div class="can-omni-icon" >{{title-page.svg}}</div>
+<$reveal type="match" stateTitle=<<quickstate>> stateField="edittitle" text="" default="">
+<div class="can-omni-icon" >{{$:/plugins/can/quick/title-page.svg}}</div>
 </$reveal>
-<$reveal type="nomatch" stateTitle="<<quickstate>>" stateField="!!edittitle" text="" default="">
-<$button class="can-omni-button tc-btn-invisible" actions="<$action-setfield $tiddler=<<quickstate>> $field='edittitle' /><$action-setfield quickadd-titletoggle='display'/>">{{escape.svg}}</$button>
+<$reveal type="nomatch" stateTitle=<<quickstate>> stateField="edittitle" text="">
+<$button class="can-omni-button tc-btn-invisible" actions="<$action-setfield $tiddler=<<quickstate>> $field='edittitle' /><$action-setfield quickadd-titletoggle='display'/>">{{$:/plugins/can/quick/escape.svg}}</$button>
 </$reveal>
 <$keyboard tag="div" class="tc-can-keyboard" key="ctrl-enter" actions='<<submit-actions>><<reset-actions>>' >
-<$keyboard tag="div" class="tc-can-keyboard" key="escape" actions="<$action-setfield $field='edittitle' /> <$action-setfield quickadd-titletoggle='display'/>">
+<$keyboard tag="div" class="tc-can-keyboard" key="escape" actions="<$action-setfield $tiddler=<<quickstate>> $field='edittitle' /> <$action-setfield quickadd-titletoggle='display'/>">
 <$edit-text class="can-quickadd-titleedit" tiddler=<<quickstate>> field=edittitle placeholder="Add a title"/>
 </$keyboard></$keyboard>
 </div>
@@ -33,7 +33,7 @@ tags: $:/tags/Macro
 
 \define quickstate() $:/temp/can-quickadd/$(currentTiddler)$
 
-\define quickadd14(tags:"" focus:"true" omniparent:"" buttonstyle:"small" endstate:"open")
+\define quickadd(tags:"" focus:"true" omniparent:"" buttonstyle:"small" endstate:"open")
 <$set name=contTiddler value=<<currentTiddler>> >
 <$set name=contTiddlerFilt filter="[<currentTiddler>]" >
 <$set name=focus value=<<__focus__>> >
@@ -46,7 +46,7 @@ tags: $:/tags/Macro
 	<<quicktext>>
 	<div class="can-quickadd-btmrow">
 	<<quicktitle>>
-	<$button class="tc-btn-invisible" actions=<<reset-actions>> >{{escape.svg}}</$button>
+	<$button class="tc-btn-invisible" actions=<<reset-actions>> >{{$:/plugins/can/quick/escape.svg}}</$button>
 	<<quickbutton buttonstyle:$buttonstyle$ >>
 	</div>
 	</$set></$set>
@@ -56,5 +56,5 @@ tags: $:/tags/Macro
 \end
 
 \define can-quicknote()
-<$macrocall $name="quickadd14" tags="quicknote" buttonstyle="big"/>
+<$macrocall $name="quickadd" tags="quicknote" buttonstyle="big"/>
 \end
