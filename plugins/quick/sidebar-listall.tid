@@ -1,6 +1,0 @@
-tags: $:/tags/SideBar
-list-before: $:/core/ui/SideBar/Tools
-caption: All
-title: $:/plugins/can/quick/sidebar-all
-
-<$list filter={{$:/core/Filters/AllTiddlers!!filter}}><<omnilabel>><br></$list>
