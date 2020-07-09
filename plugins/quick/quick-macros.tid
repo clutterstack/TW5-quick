@@ -14,11 +14,11 @@ tags: $:/tags/Macro
 \define quicktitle()
 <div class="can-quickadd-titleadder">
 <$keyboard tag="div" class="can-keyboard-wide" key="ctrl-enter" actions='<<submit-actions>><<reset-actions>>' >
-<$keyboard tag="div" class="can-keyboard-wide" key="escape" actions="<$action-setfield $tiddler=<<quickstate>> $field='edittitle' /> <$action-setfield quickadd-titletoggle='display'/>">
+<$keyboard tag="div" class="can-keyboard-wide" key="escape" actions="<$action-setfield $tiddler=<<quickstate>> $field='edittitle' />">
 <$edit-text class="can-quickadd-titleedit" tiddler=<<quickstate>> field=edittitle placeholder="Add a title"/>
 </$keyboard></$keyboard>
 <$reveal type="nomatch" stateTitle=<<quickstate>> stateField="edittitle" text="">
-<$button class="can-omni-button tc-btn-invisible" actions="<$action-setfield $tiddler=<<quickstate>> $field='edittitle' /><$action-setfield quickadd-titletoggle='display'/>">{{$:/plugins/can/quick/escape.svg}}</$button>
+<$button class="can-omni-button tc-btn-invisible" actions="<$action-setfield $tiddler=<<quickstate>> $field='edittitle'/>">{{$:/plugins/can/quick/escape.svg}}</$button>
 </$reveal>
 </div>
 \end
@@ -41,7 +41,7 @@ tags: $:/tags/Macro
 	<$set name=omniParent value="$omniparent$">
 	<$set name=omniParBrak filter="[<omniParent>]">
 	<$set name="submit-actions" value="<$tiddler tiddler=<<quickstate>> ><$set name=theTime value=<<now [UTC]YYYY0MM0DD0hh0mm0ss0XXX>>><$set name=newtitle value={{!!edittitle}} emptyValue=<<theTime>> ><$action-setfield newtitle=<<newtitle>>/><$action-createtiddler $basetitle={{!!newtitle}} $savetitle=!!savetitle text={{!!text}} tags=<<subTags>> created=<<theTime>> omniparent=<<omniParBrak>> /><$action-listops $tiddler=<<__omniparent__>> $subfilter='+[insertbefore:contTiddlerFilt{!!savetitle}] +[move{!!savetitle}]'/><$action-setfield $tiddler=<<contTiddler>> quickadd-addtoggle=$endstate$ $timestamp='no'/></$set></$set></$tiddler>">
-	<$set name="reset-actions" value="<$tiddler tiddler=<<quickstate>> ><$action-setfield $field=edittitle/><$action-setfield text=''/><$action-setfield $tiddler=<<contTiddler>> quickadd-addtoggle=$endstate$ $timestamp='no' /><$action-setfield quickadd-titletoggle='hide'/></$tiddler>" >
+	<$set name="reset-actions" value="<$tiddler tiddler=<<quickstate>> ><$action-setfield $field=edittitle/><$action-setfield text=''/><$action-setfield $tiddler=<<contTiddler>> quickadd-addtoggle=$endstate$ $timestamp='no' /></$tiddler>" >
 	<<quickresetbutton>>
 	<<quicktext>>
 	<div class="can-quickadd-btmrow">

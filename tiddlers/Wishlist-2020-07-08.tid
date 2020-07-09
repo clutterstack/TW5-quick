@@ -1,5 +1,7 @@
 title: Wishlist 2020-07-08
 
+* escape from text field updates timestamp on containing tiddler, while reset button does not.
+
 * button captions, aria-labels etc.
 * autosave
 * improve icons
