@@ -25,7 +25,7 @@ tags: $:/tags/Macro
 
 \define quicktext()
 <$keyboard tag="div" class="can-keyboard-wide" key="ctrl-enter" actions="<<submit-actions>> <<reset-actions>>" >
-<$keyboard tag="div" class="can-keyboard-wide" key="escape" actions="<<reset-actions>> <$action-setfield quickadd-addtoggle=<<__endstate__>> >" >
+<$keyboard tag="div" class="can-keyboard-wide" key="escape" actions="<<reset-actions>>" >
 <$edit-text class="can-quickadd-textarea" tiddler=<<quickstate>> field="text" default="" placeholder="Another One Bites the Dust" focus=<<focus>>/>
 </$keyboard></$keyboard>
 \end
