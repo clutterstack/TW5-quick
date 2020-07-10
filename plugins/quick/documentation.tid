@@ -9,6 +9,8 @@ Type in the text field and hit CTRL-ENTER, or the {{$:/plugins/can/quick/quickad
 
 There is also a field provided in case the user wants to add a title at creation time. ESCAPE here resets only the title; CTRL-ENTER submits the tiddler.
 
+The new tiddler does //not// get inserted into the Story River.
+
 Tiddlers created by this plugin are given a title which is their `created` field expressed in `[UTC]YYYY0MM0DD0hh0mm0ss0XXX` format, if the user does not specify a title.
 
 !!''quickadd'' macro
@@ -21,13 +23,13 @@ Most of the work is done by the ''quickadd'' macro.
 :A list of tags to apply to the generated tiddler. Defaults to empty, but the convenience macro ''arrownote'' tags tiddlers with the tag `quickadd`.
 
 ;focus
-:Indicates whether the text field of the quickadd interface should take focus when opened.Default: `"true"`
+:Indicates whether the text field of the quickadd interface should take focus when opened. Default: `"true"`
 
 ;omniparent
 :Sets a value on a field called `omniparent` on the generated tiddler. Used in my personal workflow, but not explicitly useful in this plugin.
 
 ;buttonstyle
-:Sets a class on the tiddler submission button. `big` makes the button extra large. Defaults to `small`, but the convenience macro ''arrownote'' specifies `big`.
+:Sets a class on the tiddler submission button. `big` makes the button extra large. Defaults to `small` in the general-purpose ''quickadd'' macro, but the convenience macro ''arrownote'' specifies `big`.
 
 ;endstate
 :Value assigned to a field called `quickadd-addtoggle` on the tiddler //containing// the macro call, when submitting or cancelling from the quickadd interface. This can be used with a ''reveal'' widget in the containing tiddler to determine whether the quickadd interface stays open or closes after use. Defaults to `"open"`, so that multiple tiddlers can be generated with the fewest UI interactions. This field could conceivably be used for other purposes.
