@@ -3,11 +3,11 @@ caption: documentation
 
 !!Basic usage
 
-The page control button {{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}} or {{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}} toggles visibility of a tiddler, pinned at the top of the Story River, from which to (repeatedly, if desired) create quick tiddlers with a minimum of interaction and mental overhead. It's up to the user to decide how to organize or search for this information later!
+The page control button {{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}} or {{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}} toggles visibility of a tiddler, pinned at the top of the Story River, from which to (repeatedly, if desired) create quick tiddlers with a minimum of interaction and mental overhead. It's up to the user to decide how to organize or search for this information later! (Although tiddlers generated through this interface are tagged `quickadd` for easy location.)
 
-Type in the text field and hit CTRL-ENTER, or the {{$:/plugins/can/quick/quickadd-big-button.svg}} button to create a new Tiddlers. ESCAPE, or the [img[$:/plugins/can/quick/escape.svg]] button, cancels the input.
+Type in the text field and hit CTRL-ENTER, or the {{$:/plugins/can/quick/quickadd-big-button.svg}} button, to create a new tiddler. ESCAPE, or the [img[$:/plugins/can/quick/escape.svg]] button, cancels the input.
 
-There is also a field provided in case the user wants to add a title at creation time.
+There is also a field provided in case the user wants to add a title at creation time. ESCAPE here resets only the title; CTRL-ENTER submits the tiddler.
 
 Tiddlers created by this plugin are given a title which is their `created` field expressed in `[UTC]YYYY0MM0DD0hh0mm0ss0XXX` format, if the user does not specify a title.
 
@@ -18,7 +18,7 @@ Most of the work is done by the ''quickadd'' macro.
 !!!Parameters
 
 ;tags
-:A list of tags to apply to the generated tiddler.
+:A list of tags to apply to the generated tiddler. Defaults to empty, but the convenience macro ''arrownote'' tags tiddlers with the tag `quickadd`.
 
 ;focus
 :Indicates whether the text field of the quickadd interface should take focus when opened.Default: `"true"`
@@ -41,4 +41,4 @@ The ''quicksub'' macro calls ''quickadd'', supplementing whatever tags are provi
 
 !! ''omnilabel'' macro
 
-There is also a macro, called ''omnilabel'', that generates a label from the text of tiddlers without intentional titles, This plugin overrides the core ''timeline-title'' macro (defined in $:/core/macros/timeline) to use ''omnilabel'' instead of the tiddler's title in the timeline macro -- which is used by the "Recent" sidebar tab. 
+There is also a macro, called ''omnilabel'', that generates labels using the text of tiddlers without intentional titles, This plugin overrides the core ''timeline-title'' macro (defined in $:/core/macros/timeline) to use ''omnilabel'' instead of the tiddler's title in the timeline macro -- which is used by the "Recent" sidebar tab. 
