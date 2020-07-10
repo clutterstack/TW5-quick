@@ -1,0 +1,9 @@
+{
+    "title": "$:/plugins/can/quick",
+    "description": "Fire off quick notes, title optional",
+    "author": "Chris Nicoll",
+    "version": "0.0.1",
+    "core-version": ">=5.1.22",
+    "source": "https://github.com/clutterstack/quick",
+    "plugin-type": "plugin"
+}

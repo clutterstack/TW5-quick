@@ -1,0 +1,58 @@
+created: 20200507184921957
+creator: chris
+modified: 20200706205716530
+modifier: chris
+tags: $:/tags/Stylesheet
+title: $:/plugins/can/rapids/rapid-stylesheet
+
+
+.can-quickadd {
+margin-top: 1em;
+}
+
+.can-quickadd-textarea {
+width: 100%;
+}
+
+.can-quickadd-titleedit, .can-quickadd-textarea {
+outline-color: #eee;
+border: 1px solid #eee;
+}
+
+.can-quickadd-btmrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.tc-can-keyboard {position: relative; width: 100%;}
+
+.can-quickadd-titleadder {
+display: flex;
+flex-direction: row;
+}
+
+.can-title-cancel {
+margin-right: 1em;
+}
+
+.can-omni-button , .can-omni-icon {
+height: 16px;
+padding: 0 .5em 0 0;
+align-self: flex-start;
+}
+
+.can-omni-button svg, .can-omni-icon svg {
+fill: #cccccc;
+height: 16px;
+width: 16px;
+flex: 0 0 auto;
+}
+
+
+.tc-can-bigbutton.big {width: 36pt; height: 36pt; margin-top: 0.2em;}
+.tc-can-bigbutton.big svg {width: 32pt; height: 32pt;}
+
+.tc-can-bigbutton.small {width: 1em; height: 1em;}
+.tc-can-bigbutton.small svg {width: 15pt; height: 15pt;}
+
+.tc-can-bigbutton.none {display: none;}

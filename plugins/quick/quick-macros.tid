@@ -1,0 +1,60 @@
+title: $:/plugins/can/quicks/quick-macros
+
+\define quickbutton(buttonstyle)
+<div>
+<$button class="tc-btn-invisible tc-can-bigbutton $buttonstyle$" actions="<<submit-actions>> <<reset-actions>>">
+{{quick-add-big-button.svg}}
+</$button>
+</div>
+\end
+
+\define quicktitle()
+<$link to={{!!edittitle}}/><br>
+<div class="can-quickadd-titleadder">
+<$reveal type="match" stateTitle="<<quickstate>>" stateField="!!edittitle" text="" default="">
+<div class="can-omni-icon" >{{title-page.svg}}</div>
+</$reveal>
+<$reveal type="nomatch" stateTitle="<<quickstate>>" stateField="!!edittitle" text="" default="">
+<$button class="can-omni-button tc-btn-invisible" actions="<$action-setfield $tiddler=<<quickstate>> $field='edittitle' /><$action-setfield quickadd-titletoggle='display'/>">{{escape.svg}}</$button>
+</$reveal>
+<$keyboard tag="div" class="tc-can-keyboard" key="ctrl-enter" actions='<<submit-actions>><<reset-actions>>' >
+<$keyboard tag="div" class="tc-can-keyboard" key="escape" actions="<$action-setfield $field='edittitle' /> <$action-setfield quickadd-titletoggle='display'/>">
+<$edit-text class="can-quickadd-titleedit" tiddler=<<quickstate>> field=edittitle placeholder="Add a title"/>
+</$keyboard></$keyboard>
+</div>
+\end
+
+\define quicktext()
+<$keyboard tag="div" class="tc-can-keyboard" key="ctrl-enter" actions="<<submit-actions>> <<reset-actions>>" >
+<$keyboard tag="div" class="tc-can-keyboard" key="escape" actions="<<reset-actions>> <$action-setfield quickadd-addtoggle=<<__endstate__>> >" >
+<$edit-text class="can-quickadd-textarea" tiddler=<<quickstate>> field='text' default='' placeholder='Another One Bites the Dust' focus=<<focus>>/>
+</$keyboard></$keyboard>
+\end
+
+\define quickstate() $:/temp/can-quickadd/$(currentTiddler)$
+
+\define quickadd14(tags:"" focus:"true" omniparent:"" buttonstyle:"small" endstate:"open")
+<$set name=contTiddler value=<<currentTiddler>> >
+<$set name=contTiddlerFilt filter="[<currentTiddler>]" >
+<$set name=focus value=<<__focus__>> >
+<div class="can-quickadd">
+	<$vars subTags=<<__tags__>> >
+	<$set name=omniParent value="$omniparent$">
+	<$set name=omniParBrak filter="[<omniParent>]">
+	<$set name="submit-actions" value="<$tiddler tiddler=<<quickstate>> ><$set name=theTime value=<<now [UTC]YYYY0MM0DD0hh0mm0ss0XXX>>><$set name=newtitle value={{!!edittitle}} emptyValue=<<theTime>> ><$action-setfield newtitle=<<newtitle>>/><$action-createtiddler $basetitle={{!!newtitle}} $savetitle=!!savetitle text={{!!text}} tags=<<subTags>> created=<<theTime>> omniparent=<<omniParBrak>> /><$action-listops $tiddler=<<__omniparent__>> $subfilter='+[insertbefore:contTiddlerFilt{!!savetitle}] +[move{!!savetitle}]'/><$action-setfield $tiddler=<<contTiddler>> quickadd-addtoggle=$endstate$ $timestamp='no'/></$set></$set></$tiddler>">
+	<$set name="reset-actions" value="<$tiddler tiddler=<<quickstate>> ><$action-setfield $field=edittitle/><$action-setfield text=''/><$action-setfield $tiddler=<<contTiddler>> quickadd-addtoggle=$endstate$ $timestamp='no' /><$action-setfield quickadd-titletoggle='hide'/></$tiddler>" >
+	<<quicktext>>
+	<div class="can-quickadd-btmrow">
+	<<quicktitle>>
+	<$button class="tc-btn-invisible" actions=<<reset-actions>> >{{escape.svg}}</$button>
+	<<quickbutton buttonstyle:$buttonstyle$ >>
+	</div>
+	</$set></$set>
+	</$set></$set>
+	</$vars>
+</div></$set></$set></$set>
+\end
+
+\define can-quicknote()
+<$macrocall $name="quickadd" tags="quicknote" buttonstyle="big"/>
+\end
