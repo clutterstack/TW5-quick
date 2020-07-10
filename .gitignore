@@ -1,4 +1,5 @@
 .DS_Store
+*.code-workspace
 .c9/
 tmp/
 output/
