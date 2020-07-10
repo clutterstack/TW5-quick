@@ -1,35 +1,44 @@
 title: $:/plugins/can/quick/documentation
 caption: documentation
 
-
-This plugin overrides the core ''timeline-title'' macro (defined in $:/core/macros/timeline), to display a label based on the text of tiddlers whose 
-
 !!Basic usage
 
-The toolbar button {{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}} or {{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}} toggles visibility of a tiddler at the top of the Story River. 
+The page control button {{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}} or {{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}} toggles visibility of a tiddler, pinned at the top of the Story River, from which to (repeatedly, if desired) create quick tiddlers with a minimum of interaction and mental overhead. It's up to the user to decide how to organize or search for this information later!
 
 Type in the text field and hit CTRL-ENTER, or the {{$:/plugins/can/quick/quickadd-big-button.svg}} button to create a new Tiddlers. ESCAPE, or the [img[$:/plugins/can/quick/escape.svg]] button, cancels the input.
 
 There is also a field provided in case the user wants to add a title at creation time.
 
-This plugin provides the following macros:
+Tiddlers created by this plugin are given a title which is their `created` field expressed in `[UTC]YYYY0MM0DD0hh0mm0ss0XXX` format, if the user does not specify a title.
 
-```
-quickadd(tags:"" focus:"true" omniparent:"" buttonstyle:"small" endstate:"open")
-```
+!!''quickadd'' macro
 
-```
-<<arrownote>>
-<$macrocall $name="quickadd" tags="quickadd" buttonstyle="big"/>
-```
+Most of the work is done by the ''quickadd'' macro.
 
-Tiddlers created from the quickadd or arrownote interface are given a title which is their `created` field expressed in `[UTC]YYYY0MM0DD0hh0mm0ss0XXX` format, unless the user specifies a title.
+!!!Parameters
 
-`omnilabel`: Because a string of digits doesn't give much info on the tiddler contents, this macro generates a label for each tiddler which can be used 
+;tags
+:A list of tags to apply to the generated tiddler.
 
-There is also:
+;focus
+:Indicates whether the text field of the quickadd interface should take focus when opened.Default: `"true"`
 
-* a toolbar button to reveal a tiddler (pinned above the storylist) from which to (repeatedly, if desired) create tiddlers using `arrownote`.
-* a tweak to the core timeline macro to use `<<omnilabel>>` instead of the tiddler's title in the timeline macro -- which is used by the "Recent" sidebar tab.
-* a tiddler tagged `$:/tags/SideBar` which lists all (non-system, non-shadow) tiddlers by their `omnilabel`.
+;omniparent
+:Sets a value on a field called `omniparent` on the generated tiddler. Used in my personal workflow, but not explicitly useful in this plugin.
 
+;buttonstyle
+:Sets a class on the tiddler submission button. `big` makes the button extra large. Defaults to `small`, but the convenience macro ''arrownote'' specifies `big`.
+
+;endstate
+:Value assigned to a field called `quickadd-addtoggle` on the tiddler //containing// the macro call, when submitting or cancelling from the quickadd interface. This can be used with a ''reveal'' widget in the containing tiddler to determine whether the quickadd interface stays open or closes after use. Defaults to `"open"`, so that multiple tiddlers can be generated with the fewest UI interactions. This field could conceivably be used for other purposes.
+
+
+!! Convenience macros
+
+The ''arrownote'' macro simply calls the ''quickadd'' macro with parameters `tags="arrownote" buttonstyle="big"`, and is used in the plugin's provided interface tiddler, ArrowNoteAdder. 
+
+The ''quicksub'' macro calls ''quickadd'', supplementing whatever tags are provided in parameters with the title of the current tiddler. It takes the same parameters as ''quickadd''. 
+
+!! ''omnilabel'' macro
+
+There is also a macro, called ''omnilabel'', that generates a label from the text of tiddlers without intentional titles, This plugin overrides the core ''timeline-title'' macro (defined in $:/core/macros/timeline) to use ''omnilabel'' instead of the tiddler's title in the timeline macro -- which is used by the "Recent" sidebar tab. 

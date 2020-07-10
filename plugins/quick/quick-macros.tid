@@ -32,7 +32,7 @@ tags: $:/tags/Macro
 
 \define quickstate() $:/temp/can-quickadd/$(currentTiddler)$
 
-\define quickadd(tags:"" focus:"true" omniparent:"" buttonstyle:"small" endstate:"open")
+\define quickadd(tags:"" omniparent:"" focus:"true" buttonstyle:"small" endstate:"open")
 <$set name=contTiddler value=<<currentTiddler>> >
 <$set name=contTiddlerFilt filter="[<currentTiddler>]" >
 <$set name=focus value=<<__focus__>> >
@@ -54,4 +54,8 @@ tags: $:/tags/Macro
 
 \define arrownote()
 <$macrocall $name="quickadd" tags="quickadd" buttonstyle="big"/>
+\end
+
+\define quicksub(tags omniparent focus:"true" buttonstyle endstate) 
+<$macrocall $name="quickadd" tags="[[$(currentTiddler)$]] $tags$" omniparent=$omniparent$ focus=$focus$ buttonstyle=$buttonstyle$ endstate=$endstate$ />
 \end
