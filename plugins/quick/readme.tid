@@ -1,27 +1,10 @@
 title: $:/plugins/can/quick/readme
 caption: readme
 
-The CAN Quick plugin for TiddlyWiki is meant to make it easier to jot small bits of information into a TiddlyWiki.
+The CAN Quick plugin is meant to make it easier to jot small bits of information into a TiddlyWiki.
 
-The main feature is a lot like using a New Journal button, but the experience is tweaked to reduce cognitive overhead and the number of UI interactions.
+The main feature is an interface which is a lot like using a New Journal button, but the experience is tweaked to reduce cognitive overhead and the number of UI interactions.
 
-This plugin provides the following macros:
+It is possible, but not necessary, to enter a title for a "quick" tiddler. If a title is not provided, the tiddler is created with a timestamp for a title.
 
-```
-quickadd(tags:"" focus:"true" omniparent:"" buttonstyle:"small" endstate:"open")
-```
-
-```
-<<arrownote>>
-<$macrocall $name="quickadd" tags="quickadd" buttonstyle="big"/>
-```
-
-Tiddlers created from the quickadd or arrownote interface are given a title which is their `created` field expressed in `[UTC]YYYY0MM0DD0hh0mm0ss0XXX` format, unless the user specifies a title.
-
-`omnilabel`: Because a string of digits doesn't give much info on the tiddler contents, this macro generates a label for each tiddler which can be used 
-
-There is also:
-
-* a toolbar button to reveal a tiddler (pinned above the storylist) from which to (repeatedly, if desired) create tiddlers using `arrownote`.
-* a tweak to the core timeline macro to use `<<omnilabel>>` instead of the tiddler's title in the timeline macro -- which is used by the "Recent" sidebar tab.
-* a tiddler tagged `$:/tags/SideBar` which lists all (non-system, non-shadow) tiddlers by their `omnilabel`.
+The ''Recent'' tab in the sidebar has been tweaked to display a sample of the tiddler text in the case that a title hasn't been chosen.
