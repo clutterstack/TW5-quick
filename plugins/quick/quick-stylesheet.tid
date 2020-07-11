@@ -10,6 +10,11 @@ title: $:/plugins/can/quick/stylesheet
 margin-top: 1em;
 }
 
+.can-quickadd.slim {
+  display: flex;
+  flex-direction: row;
+}
+
 .can-quickadd-textarea {
 width: 100%;
 }
