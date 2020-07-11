@@ -5,4 +5,5 @@ tmp/
 output/
 node_modules/
 tiddlers/
+plugins/quick/
 tiddlywiki.info
