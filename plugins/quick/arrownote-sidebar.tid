@@ -1,0 +1,9 @@
+created: 20200707225108697
+tags: $:/tags/SideBar
+title: ArrowNoteSideBar
+caption: Quick
+list-before: $:/core/ui/SideBar/Tools
+
+<div style="width: 20em;">
+<<arrownote>>
+</div>
