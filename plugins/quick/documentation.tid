@@ -5,7 +5,7 @@ caption: documentation
 
 The page control button {{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}} or {{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}} toggles visibility of a tiddler, pinned at the top of the Story River, from which to (repeatedly, if desired) create quick tiddlers with a minimum of interaction and mental overhead. It's up to the user to decide how to organize or search for this information later! (Although tiddlers generated through this interface are tagged `quickadd` for easy location.)
 
-Type in the text field and hit CTRL-ENTER, or the {{$:/plugins/can/quick/quickadd-big-button.svg}} button, to create a new tiddler. ESCAPE, or the [img[$:/plugins/can/quick/escape.svg]] button, cancels the input.
+Type in the text field and hit CTRL-ENTER, or the {{$:/plugins/can/quick/quickadd-big-button.svg}} button, to create a new tiddler. ESCAPE, or the {{$:/plugins/can/quick/escape.svg}} button, cancels the input.
 
 There is also a field provided in case the user wants to add a title at creation time. ESCAPE here resets only the title; CTRL-ENTER submits the tiddler.
 
