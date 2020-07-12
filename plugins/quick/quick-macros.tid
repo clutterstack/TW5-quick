@@ -2,14 +2,13 @@ title: $:/plugins/can/quick/quick-macros
 tags: $:/tags/Macro
 
 \define quickbutton(buttonstyle)
-<div>
 <$button class="tc-btn-invisible can-omni-button $buttonstyle$" actions="<<submit-actions>> <<reset-actions>>">
-{{$:/plugins/can/quick/quickadd-big-button.svg}}
+{{$:/plugins/can/quick/fastarrow-circle.svg}}
 </$button>
-</div>
 \end
 
-\define quickresetbutton()<$button class="can-omni-button tc-btn-invisible" actions=<<reset-actions>> >{{$:/plugins/can/quick/escape.svg}}</$button>
+\define quickresetbutton(buttonstyle) <$button class="can-omni-button can-leftedge $buttonstyle$ tc-btn-invisible" actions=<<reset-actions>> >{{$:/plugins/can/quick/escape.svg}}</$button>
+
 
 \define quicktitle()
 <div class="can-quickadd-titleadder">
@@ -18,7 +17,7 @@ tags: $:/tags/Macro
 <$edit-text class="can-quickadd-titleedit" tiddler=<<quickstate>> field=edittitle placeholder="Add a title"/>
 </$keyboard></$keyboard>
 <$reveal type="nomatch" stateTitle=<<quickstate>> stateField="edittitle" text="">
-<$button class="can-omni-button tc-btn-invisible" actions="<$action-setfield $tiddler=<<quickstate>> $field='edittitle'/>">{{$:/plugins/can/quick/escape.svg}}</$button>
+<$button class="can-omni-button tiny tc-btn-invisible" actions="<$action-setfield $tiddler=<<quickstate>> $field='edittitle'/>">{{$:/plugins/can/quick/escape.svg}}</$button>
 </$reveal>
 </div>
 \end
@@ -30,7 +29,7 @@ tags: $:/tags/Macro
 </$keyboard></$keyboard>
 \end
 
-\define quickstate() $:/temp/can-quickadd/$(currentTiddler)$
+\define quickstate() <<qualify $:/temp/can-quickadd/$(currentTiddler)$>>
 
 \define quickadd(tags:"" omniparent:"" focus:"true" buttonstyle:"small" endstate:"open" layout:"fullui")
 <$set name=contTiddlerFilt filter="[<currentTiddler>]" >
@@ -48,7 +47,7 @@ tags: $:/tags/Macro
 
 \define fullui(buttonstyle)
 <div class="can-quickadd">	
-	<<quickresetbutton>>
+	<<quickresetbutton buttonstyle:"small">>
 	<<quicktext>>
 	<div class="can-quickadd-btmrow">
 		<<quicktitle>>
@@ -57,17 +56,16 @@ tags: $:/tags/Macro
 </div>
 \end
 
-
 \define slimui()
 <div class="can-quickadd slim">	
-	<<quickresetbutton>>
+	<<quickresetbutton buttonstyle:"small">>
 	<<quicktext>>
 	<<quickbutton buttonstyle:"small" >>
 </div>
 \end
 
-\define arrownote()
-<$macrocall $name="quickadd" tags="quickadd" buttonstyle="big"/>
+\define arrownote(layout:"fullui")
+<$macrocall $name="quickadd" tags="quickadd" buttonstyle="big" layout=$layout$ />
 \end
 
 \define quicksub(tags omniparent focus:"true" buttonstyle endstate) 

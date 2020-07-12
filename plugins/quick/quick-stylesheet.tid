@@ -13,16 +13,21 @@ margin-top: 1em;
 .can-quickadd.slim {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .can-quickadd-textarea {
 width: 100%;
+margin-top: 0.4em;
 }
 
 .can-quickadd-titleedit, .can-quickadd-textarea {
-margin-top: 0.5em;
 outline-color: #eee;
 border: 1px solid #eee;
+}
+
+.can-quickadd-titleedit {
+margin-top: 0.5em;
 }
 
 .can-quickadd-btmrow {
@@ -43,23 +48,32 @@ margin-right: 1em;
 }
 
 .can-omni-button, .can-omni-icon {
-height: 16px;
 margin: 0 .5em;
-
-align-self: flex-start;
+width: 24pt;
+height: 24pt;
 }
 
 .can-omni-button svg, .can-omni-icon svg {
-fill: #cccccc;
-height: 16px;
-width: 16px;
+height: 22pt;
+width: 22pt;
 flex: 0 0 auto;
 }
 
-.can-omni-button.big {width: 36pt; height: 36pt; margin-top: 0.2em;}
-.can-omni-button.big svg {width: 32pt; height: 32pt;}
+.can-omni-button.big {width: 32pt; height: 32pt;}
+.can-omni-button.big svg {width: 30pt; height: 30pt;}
 
-.can-omni-button.small {}
+.can-omni-button.small {width: 18pt; height: 18pt;}
 .can-omni-button.small svg {}
 
+.can-omni-button.tiny {width: 16pt; height: 16pt;}
+.can-omni-button.tiny svg {padding: 1px;}
+
+.can-omni-button.minuscule {width: 12pt; height: 12pt;}
+.can-omni-button.minuscule svg {padding: 1px;}
+
 .can-omni-button.none {display: none;}
+
+.can-leftedge {
+  margin-left: 0;
+  padding-left: 0;
+}
