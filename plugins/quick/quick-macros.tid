@@ -29,7 +29,7 @@ tags: $:/tags/Macro
 </$keyboard></$keyboard>
 \end
 
-\define quickstate() <<qualify $:/temp/can-quickadd/$(currentTiddler)$>>
+\define quickstate() $:/temp/can-quickadd/$(currentTiddler)$
 
 \define quickadd(tags:"" omniparent:"" focus:"true" buttonstyle:"small" endstate:"open" layout:"fullui")
 <$set name=contTiddlerFilt filter="[<currentTiddler>]" >
