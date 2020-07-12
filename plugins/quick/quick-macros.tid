@@ -2,13 +2,12 @@ title: $:/plugins/can/quick/quick-macros
 tags: $:/tags/Macro
 
 \define quickbutton(buttonstyle)
-<$button class="tc-btn-invisible can-omni-button $buttonstyle$" actions="<<submit-actions>> <<reset-actions>>">
+<$button class="tc-btn-invisible can-omni-button can-rightedge $buttonstyle$" actions="<<submit-actions>> <<reset-actions>>">
 {{$:/plugins/can/quick/fastarrow-circle.svg}}
 </$button>
 \end
 
 \define quickresetbutton(buttonstyle) <$button class="can-omni-button can-leftedge $buttonstyle$ tc-btn-invisible" actions=<<reset-actions>> >{{$:/plugins/can/quick/escape.svg}}</$button>
-
 
 \define quicktitle()
 <div class="can-quickadd-titleadder">

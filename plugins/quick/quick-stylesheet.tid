@@ -24,6 +24,7 @@ margin-top: 0.4em;
 .can-quickadd-titleedit, .can-quickadd-textarea {
 outline-color: #eee;
 border: 1px solid #eee;
+width: 100%;
 }
 
 .can-quickadd-titleedit {
@@ -76,4 +77,9 @@ flex: 0 0 auto;
 .can-leftedge {
   margin-left: 0;
   padding-left: 0;
+}
+
+.can-rightedge {
+  margin-right: 0;
+  padding-right: 0;
 }
