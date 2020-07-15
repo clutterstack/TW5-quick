@@ -18,7 +18,7 @@ margin-top: 1em;
 
 .can-quickadd-textarea {
 width: 100%;
-margin-top: 0.4em;
+margin: 0.4em 0;
 }
 
 .can-quickadd-titleedit, .can-quickadd-textarea {
@@ -56,7 +56,7 @@ flex: 0 0 auto;
 
 .can-omni-button svg, .can-omni-button.small svg {width: 12pt; height: 12pt;}
 
-.can-omni-button.big svg {width: 22pt; height: 22pt;}
+.can-omni-button.big svg {width: 16pt; height: 16pt;}
 
 .can-omni-button.tiny svg {width: 10pt; height: 10pt;}
 

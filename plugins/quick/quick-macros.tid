@@ -1,8 +1,16 @@
 title: $:/plugins/can/quick/quick-macros
 tags: $:/tags/Macro
 
+\define omnitoggle(this is not used anywhere)
+	<$reveal type=nomatch stateTitle=<<contTiddler>> stateField="quickadd-addtoggle" text="open" tag=div class="can-omni-toggleadd"> 
+	<$button class="can-omni-button tc-btn-invisible" tooltip="Add tiddler here" aria-label="Add tiddler here" actions="<$action-setfield $tiddler=<<contTiddler>> quickadd-addtoggle='open'/>" >{{$:/core/images/new-button}}</$button>
+	</$reveal>
+	<$reveal type=match stateTitle=<<contTiddler>> stateField="quickadd-addtoggle" text="open" tag=div >
+	<$button class="can-omni-button tc-btn-invisible" actions="<$action-setfield $tiddler=<<contTiddler>> quickadd-addtoggle='close'/>">{{$:/core/images/close-button}}</$button>
+	</$reveal>
+\end
+
 \define quickbutton(buttonstyle)
-<<contTiddlerFilt>><br>
 <$button class="tc-btn-invisible can-omni-button can-rightedge $buttonstyle$" actions="<<submit-actions>> <<reset-actions>>">
 {{$:/plugins/can/quick/fastarrow-circle.svg}}
 </$button>
@@ -66,10 +74,10 @@ tags: $:/tags/Macro
 
 \define subui()
 <div class="can-quickadd sub">	
-	<<quickresetbutton buttonstyle:"small">>
 	<<quicktext>>
 	<div class="can-quickadd-btmrow">
-		<<quickbutton buttonstyle:"small" >>
+		<<quickresetbutton buttonstyle:"small">>
+		<<quickbutton buttonstyle:"big" >>
 	</div>
 </div>
 \end
