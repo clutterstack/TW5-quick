@@ -63,6 +63,15 @@ tags: $:/tags/Macro
 </div>
 \end
 
+\define subui()
+<div class="can-quickadd sub">	
+	<<quickresetbutton buttonstyle:"small">>
+	<<quicktext>>
+	<<quickbutton buttonstyle:"small" >>
+</div>
+\end
+
+
 \define arrownote(layout:"fullui")
 <$macrocall $name="quickadd" tags="quickadd" buttonstyle="big" layout=$layout$ />
 \end

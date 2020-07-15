@@ -55,7 +55,7 @@ margin-right: 0.4em;
 .can-omni-button.big {width: 32pt; height: 32pt;}
 .can-omni-button.big svg {width: 30pt; height: 30pt;}
 
-.can-omni-button.small {width: 18pt; height: 18pt;}
+.can-omni-button.small {width: 22pt; height: 22pt;}
 .can-omni-button.small svg {}
 
 .can-omni-button.tiny {width: 16pt; height: 16pt;}
