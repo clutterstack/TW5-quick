@@ -49,15 +49,7 @@ margin-right: 1em;
 }
 
 .can-omni-button, .can-omni-icon {
-margin: 0 .5em;
-width: 24pt;
-height: 24pt;
-}
-
-.can-omni-button svg, .can-omni-icon svg {
-height: 22pt;
-width: 22pt;
-flex: 0 0 auto;
+margin-right: 0.4em;
 }
 
 .can-omni-button.big {width: 32pt; height: 32pt;}
