@@ -48,21 +48,17 @@ flex-direction: row;
 margin-right: 1em;
 }
 
-.can-omni-button, .can-omni-icon {
+.can-omni-button {
 margin-right: 0.4em;
+flex: 0 0 auto;
 }
 
-.can-omni-button.big {width: 32pt; height: 32pt;}
-.can-omni-button.big svg {width: 30pt; height: 30pt;}
 
-.can-omni-button.small {width: 22pt; height: 22pt;}
-.can-omni-button.small svg {}
+.can-omni-button svg, .can-omni-button.small svg {width: 12pt; height: 12pt;}
 
-.can-omni-button.tiny {width: 16pt; height: 16pt;}
-.can-omni-button.tiny svg {padding: 1px;}
+.can-omni-button.big svg {width: 22pt; height: 22pt;}
 
-.can-omni-button.minuscule {width: 12pt; height: 12pt;}
-.can-omni-button.minuscule svg {padding: 1px;}
+.can-omni-button.tiny svg {width: 10pt; height: 10pt;}
 
 .can-omni-button.none {display: none;}
 
