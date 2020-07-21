@@ -1,5 +1,5 @@
 created: 20200707225108697
-tags: $:/tags/AboveStory
+tags:
 title: ArrowNoteAdder
 
 <$set name="visible-state" value="$:/state/can/quick/visibility/ArrowNoteAdder">

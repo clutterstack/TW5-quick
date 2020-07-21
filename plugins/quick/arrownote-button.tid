@@ -1,4 +1,4 @@
-tags: $:/tags/PageControls
+tags: 
 title: $:/plugins/can/quick/arrownote-button
 
 \define visible-state() 
