@@ -36,12 +36,12 @@ tags: $:/tags/Macro
 
 \define omni-listtop() <$action-listops $tiddler=<<__omniparent__>> $subfilter='[{!!savetitle}] +[putfirst[]]'/>
 
-\define quickadd(tags:"" omniparent:"" focus:"true" buttonstyle:"small" endstate:"open" position:"omni-inlist" layout:"fullui")
+\define quickadd(tags:"" omniparent:"" focus:"true" buttonstyle:"small" endstate:"open" position:"omni-inlist" statefield:"quickadd-addtoggle" layout:"fullui")
 <$set name=contTiddlerFilt filter="[<currentTiddler>]" >
 <$vars contTiddler=<<currentTiddler>> focus=$focus$ layout=$layout$ subTags=<<__tags__>> omniParent="$omniparent$">
 <$set name=omniParBrak  filter="[<omniParent>]" >
-<$set name="submit-actions" value="<$tiddler tiddler=<<quickstate>> ><$set name=theTime value=<<now [UTC]YYYY0MM0DD0hh0mm0ss0XXX>>><$set name=newtitle value={{!!edittitle}} emptyValue=<<theTime>> ><$action-setfield newtitle=<<newtitle>>/><$action-createtiddler $basetitle={{!!newtitle}} $savetitle=!!savetitle text={{!!text}} tags=<<subTags>> created=<<theTime>> omniparent=<<omniParBrak>> /><$macrocall $name=$position$/><$action-setfield $tiddler=<<contTiddler>> quickadd-addtoggle=$endstate$ $timestamp='no'/></$set></$set></$tiddler><$action-sendmessage $message='tm-auto-save-wiki'/>" >
-<$set name="reset-actions" value="<$tiddler tiddler=<<quickstate>> ><$action-setfield $field=edittitle/><$action-setfield text=''/><$action-setfield $tiddler=<<contTiddler>> quickadd-addtoggle=$endstate$ $timestamp='no' /></$tiddler>" >
+<$set name="submit-actions" value="<$tiddler tiddler=<<quickstate>> ><$set name=theTime value=<<now [UTC]YYYY0MM0DD0hh0mm0ss0XXX>>><$set name=newtitle value={{!!edittitle}} emptyValue=<<theTime>> ><$action-setfield newtitle=<<newtitle>>/><$action-createtiddler $basetitle={{!!newtitle}} $savetitle=!!savetitle text={{!!text}} tags=<<subTags>> created=<<theTime>> omniparent=<<omniParBrak>> /><$macrocall $name=$position$/><$action-setfield $tiddler=<<contTiddler>> $field=$statefield$ $value=$endstate$ $timestamp='no'/></$set></$set></$tiddler><$action-sendmessage $message='tm-auto-save-wiki'/>" >
+<$set name="reset-actions" value="<$tiddler tiddler=<<quickstate>> ><$action-setfield $field=edittitle/><$action-setfield text=''/><$action-setfield $tiddler=<<contTiddler>> $field=$statefield$ $value=$endstate$ $timestamp='no' /></$tiddler>" >
 <<quickui layout:$layout$ buttonstyle:$buttonstyle$>>
 </$set></$set></$set></$vars></$set>
 \end
@@ -73,7 +73,7 @@ tags: $:/tags/Macro
 <div class="can-quickadd sub">	
 	<<quicktext>>
 	<div class="can-quickadd-btmrow">
-		<<quickresetbutton buttonstyle:"small">>
+		<<quicktitle>>
 		<<quickbutton buttonstyle:"big" >>
 	</div>
 </div>

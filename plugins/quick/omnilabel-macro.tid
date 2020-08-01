@@ -4,13 +4,13 @@ tags: $:/tags/Macro
 title: $:/plugins/can/quick/omnilabel-macro
 type: text/vnd.tiddlywiki
 
-\define cancreatedlist() <$list filter=<<currentTiddler>> ><$view field="created" format="date" template="[UTC]YYYY0MM0DD0hh0mm0ss0XXX"/></$list>
+\define cancreatedstring() <$list filter=<<currentTiddler>> ><$view field="created" format="date" template="[UTC]YYYY0MM0DD0hh0mm0ss0XXX"/></$list>
 
 \define omnilabel(chars:100)
-<$wikify name=wikicre text=<<cancreatedlist>> >
-<$wikify name="can-omni-label" text={{{ [<currentTiddler>get[title]!match<wikicre>] ~[<currentTiddler>get[text]!is[blank]] ~[<currentTiddler>get[title]]}}}>
+<$wikify name=wikicre text=<<cancreatedstring>> >
+<$wikify name="can-long-label" text={{{ [<currentTiddler>get[title]!match<wikicre>] ~[<currentTiddler>get[text]!is[blank]] ~[<currentTiddler>get[title]]}}}>
 	<$link to=<<currentTiddler>>>
-		<$text text={{{ [<can-omni-label>split[]first[$chars$]join[]] }}}/>
+		<$text text={{{ [<can-long-label>split[]first[$chars$]join[]] }}}/>
 	</$link>
 </$wikify></$wikify>
 \end
