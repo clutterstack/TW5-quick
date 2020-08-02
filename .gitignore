@@ -2,9 +2,8 @@
 *.code-workspace
 .c9/
 tmp/
-output/
+output/twBackups/
 node_modules/
 tiddlers/
 tiddlywiki.info
-index.html
 editions/
