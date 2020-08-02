@@ -2,8 +2,10 @@
 *.code-workspace
 .c9/
 tmp/
-output/
+output/twBackups/
 node_modules/
 tiddlers/
+plugins/
 plugins/quick/
 tiddlywiki.info
+editions/
