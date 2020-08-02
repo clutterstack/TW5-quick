@@ -2,7 +2,7 @@
 *.code-workspace
 .c9/
 tmp/
-output/twBackups/
+output/
 node_modules/
 tiddlers/
 plugins/
