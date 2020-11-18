@@ -1,6 +1,6 @@
 created: 20200707225108697
 tags: $:/tags/SideBar
-title: ArrowNoteSideBar
+title: $:/plugins/can/quick/arrownote-sidebar
 caption: Quick
 list-before: $:/core/ui/SideBar/Tools
 

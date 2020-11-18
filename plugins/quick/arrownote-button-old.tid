@@ -1,9 +1,8 @@
 tags: 
 title: $:/plugins/can/quick/arrownote-button
 
-\define visible-state() 
-$:/state/can/quick/visibility/ArrowNoteAdder
-\end
+\define visible-state() $:/state/can/quick/visibility/ArrowNoteAdder
+
 <$button class="tc-btn-invisible">
 <$reveal type="nomatch" stateTitle=<<visible-state>> text="hide" default="show">
 <$action-setfield $tiddler=<<visible-state>> $value="hide"/>

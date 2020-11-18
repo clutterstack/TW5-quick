@@ -1,0 +1,6 @@
+title: $:/plugins/can/quick/arrownote-top
+tags: $:/tags/AboveStory
+
+<div class="arrownote-top-container">
+{{$:/plugins/can/quick/arrownote-adder}}
+</div>

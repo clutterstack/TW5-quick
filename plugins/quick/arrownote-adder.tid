@@ -1,8 +1,6 @@
-created: 20200707225108697
-tags:
-title: ArrowNoteAdder
+title: $:/plugins/can/quick/arrownote-adder
 
-<$set name="visible-state" value="$:/state/can/quick/visibility/ArrowNoteAdder">
+<$set name="visible-state" value="<<qualify $:/state/can/quick/visibility/ArrowNoteAdder>>">
 <$reveal type="nomatch" stateTitle=<<visible-state>> text="hide" default="show">
 <<arrownote>>
 </$reveal>

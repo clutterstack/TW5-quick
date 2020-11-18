@@ -53,7 +53,15 @@ margin-right: 0.4em;
 flex: 0 0 auto;
 }
 
+.arrownote-top-container {
+    border-radius: 1em;
+    padding: 0 1em 1em 1em;
+    background-color: rgba(255,255,255,0.8);
+}
 
+.tc-topbar .arrownote-top-container svg {
+    fill: #666699;
+}
 .can-omni-button svg, .can-omni-button.small svg {width: 12pt; height: 12pt;}
 
 .can-omni-button.big svg {width: 16pt; height: 16pt;}

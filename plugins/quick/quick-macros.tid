@@ -14,7 +14,7 @@ tags: $:/tags/Macro
 <$keyboard tag="div" class="can-keyboard-wide" key="ctrl-enter" actions='<<submit-actions>><<reset-actions>>' >
 <$keyboard tag="div" class="can-keyboard-wide" key="cmd-enter" actions='<<submit-actions>><<reset-actions>>' >
 <$keyboard tag="div" class="can-keyboard-wide" key="escape" actions="<$action-setfield $tiddler=<<quickstatetid>> $field='edittitle' />">
-<$edit-text class="can-quickadd-titleedit" tiddler=<<quickstatetid>> field=edittitle placeholder="Add a title"/>
+<$edit-text class="can-quickadd-titleedit" tiddler=<<quickstatetid>> field=edittitle placeholder="Optional title"/>
 </$keyboard></$keyboard></$keyboard>
 <$reveal type="nomatch" stateTitle=<<quickstatetid>> stateField="edittitle" text="">
 <$button class="can-omni-button tiny tc-btn-invisible" actions="<$action-setfield $tiddler=<<quickstatetid>> $field='edittitle'/>">{{$:/plugins/can/quick/escape.svg}}</$button>
@@ -26,7 +26,7 @@ tags: $:/tags/Macro
 <$keyboard tag="div" class="can-keyboard-wide" key="ctrl-enter" actions="<<submit-actions>> <<reset-actions>>" >
 <$keyboard tag="div" class="can-keyboard-wide" key="cmd-enter" actions="<<submit-actions>> <<reset-actions>>" >
 <$keyboard tag="div" class="can-keyboard-wide" key="escape" actions="<<reset-actions>>" >
-<$edit-text class="can-quickadd-textarea" tiddler=<<quickstatetid>> field="text" default="" placeholder="Another One Bites the Dust" rows="1" minHeight="0" focus=<<focus>>/>
+<$edit-text class="can-quickadd-textarea" tiddler=<<quickstatetid>> field="text" default="" placeholder="Enter quick text here" rows="1" minHeight="0" focus=<<focus>>/>
 </$keyboard></$keyboard></$keyboard>
 \end
 

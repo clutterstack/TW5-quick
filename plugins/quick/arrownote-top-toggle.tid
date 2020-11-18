@@ -1,0 +1,16 @@
+title: $:/plugins/can/quick/arrownote-top-toggle-button
+tags: $:/tags/PageControls
+
+
+
+<$list filter="[[$:/plugins/can/quick/arrownote-top]contains:tags[$:/tags/AboveStory]]">
+<$button class="tc-btn-invisible" actions="""<$action-listops $tiddler="$:/plugins/can/quick/arrownote-top" $tags="-$:/tags/AboveStory"/>""" tooltip="Hide quick adder above story">
+{{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}}
+</$button>
+</$list>
+
+<$list filter="[[$:/plugins/can/quick/arrownote-top]!contains:tags[$:/tags/AboveStory]]">
+<$button class="tc-btn-invisible" actions="""<$action-listops $tiddler="$:/plugins/can/quick/arrownote-top" $tags="+$:/tags/AboveStory"/>""" tooltip="Show quick adder above story">
+{{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}}
+</$button>
+</$list>

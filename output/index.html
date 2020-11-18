@@ -155,6 +155,8 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/can/quick/$:/plugins/can/quick/arrownote-adder</li>
+
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
 <li>$:/StoryList</li>
@@ -164,6 +166,10 @@ Error message and password prompt
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
+
+<li>20201118165007770</li>
+
+<li>20201118165012616</li>
 
 <li>Basic usage</li>
 
@@ -179,7 +185,11 @@ Error message and password prompt
 
 <li>Slim UI demo</li>
 
+<li>Sub-UI demo</li>
+
 <li>Wishlist 2020-07-10</li>
+
+<li>Wishlist 2020-11-18</li>
 
 </ul>
 </p>
@@ -9577,32 +9587,40 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="Chris Nicoll" core-version="&gt;=5.1.22" dependents="" description="Fire off quick notes, title optional" list="readme documentation license" plugin-type="plugin" source="https://github.com/clutterstack/TW5-quick" title="$:/plugins/can/quick" type="application/json" version="0.0.3">
+<div author="Chris Nicoll" core-version="&gt;=5.1.22" dependents="" description="CAN Quick - Quick notes, title optional" list="readme documentation license" plugin-type="plugin" source="https://github.com/clutterstack/TW5-quick" title="$:/plugins/can/quick" type="application/json" version="0.0.5">
 <pre>{
     &quot;tiddlers&quot;: {
-        &quot;ArrowNoteAdder&quot;: {
-            &quot;title&quot;: &quot;ArrowNoteAdder&quot;,
-            &quot;created&quot;: &quot;20200707225108697&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;text&quot;: &quot;&lt;$set name=\&quot;visible-state\&quot; value=\&quot;$:/state/can/quick/visibility/ArrowNoteAdder\&quot;&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; stateTitle=&lt;&lt;visible-state&gt;&gt; text=\&quot;hide\&quot; default=\&quot;show\&quot;&gt;\n&lt;&lt;arrownote&gt;&gt;\n&lt;/$reveal&gt;\n&lt;/$set&gt;&quot;
+        &quot;$:/plugins/can/quick/arrownote-adder&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/can/quick/arrownote-adder&quot;,
+            &quot;text&quot;: &quot;&lt;$set name=\&quot;visible-state\&quot; value=\&quot;&lt;&lt;qualify $:/state/can/quick/visibility/ArrowNoteAdder&gt;&gt;\&quot;&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; stateTitle=&lt;&lt;visible-state&gt;&gt; text=\&quot;hide\&quot; default=\&quot;show\&quot;&gt;\n&lt;&lt;arrownote&gt;&gt;\n&lt;/$reveal&gt;\n&lt;/$set&gt;&quot;
         },
         &quot;$:/plugins/can/quick/arrownote-button&quot;: {
             &quot;title&quot;: &quot;$:/plugins/can/quick/arrownote-button&quot;,
             &quot;tags&quot;: &quot;&quot;,
-            &quot;text&quot;: &quot;\\define visible-state() \n$:/state/can/quick/visibility/ArrowNoteAdder\n\\end\n&lt;$button class=\&quot;tc-btn-invisible\&quot;&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; stateTitle=&lt;&lt;visible-state&gt;&gt; text=\&quot;hide\&quot; default=\&quot;show\&quot;&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;visible-state&gt;&gt; $value=\&quot;hide\&quot;/&gt;\n{{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}}\n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;match\&quot; stateTitle=&lt;&lt;visible-state&gt;&gt; text=\&quot;hide\&quot; default=\&quot;show\&quot;&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;visible-state&gt;&gt; $value=\&quot;show\&quot;/&gt;\n{{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}}\n&lt;/$reveal&gt;\n&lt;/$button&gt;&quot;
+            &quot;text&quot;: &quot;\\define visible-state() $:/state/can/quick/visibility/ArrowNoteAdder\n\n&lt;$button class=\&quot;tc-btn-invisible\&quot;&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; stateTitle=&lt;&lt;visible-state&gt;&gt; text=\&quot;hide\&quot; default=\&quot;show\&quot;&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;visible-state&gt;&gt; $value=\&quot;hide\&quot;/&gt;\n{{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}}\n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;match\&quot; stateTitle=&lt;&lt;visible-state&gt;&gt; text=\&quot;hide\&quot; default=\&quot;show\&quot;&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;visible-state&gt;&gt; $value=\&quot;show\&quot;/&gt;\n{{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}}\n&lt;/$reveal&gt;\n&lt;/$button&gt;&quot;
         },
-        &quot;ArrowNoteSideBar&quot;: {
-            &quot;title&quot;: &quot;ArrowNoteSideBar&quot;,
+        &quot;$:/plugins/can/quick/arrownote-sidebar&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/can/quick/arrownote-sidebar&quot;,
             &quot;created&quot;: &quot;20200707225108697&quot;,
             &quot;tags&quot;: &quot;$:/tags/SideBar&quot;,
             &quot;caption&quot;: &quot;Quick&quot;,
             &quot;list-before&quot;: &quot;$:/core/ui/SideBar/Tools&quot;,
             &quot;text&quot;: &quot;&lt;div style=\&quot;width: 20em;\&quot;&gt;\n&lt;&lt;arrownote&gt;&gt;\n&lt;/div&gt;\n&quot;
         },
+        &quot;$:/plugins/can/quick/arrownote-top-toggle-button&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/can/quick/arrownote-top-toggle-button&quot;,
+            &quot;tags&quot;: &quot;$:/tags/PageControls&quot;,
+            &quot;text&quot;: &quot;\n\n&lt;$list filter=\&quot;[[$:/plugins/can/quick/arrownote-top]contains:tags[$:/tags/AboveStory]]\&quot;&gt;\n&lt;$button class=\&quot;tc-btn-invisible\&quot; actions=\&quot;\&quot;\&quot;&lt;$action-listops $tiddler=\&quot;$:/plugins/can/quick/arrownote-top\&quot; $tags=\&quot;-$:/tags/AboveStory\&quot;/&gt;\&quot;\&quot;\&quot; tooltip=\&quot;Hide quick adder above story\&quot;&gt;\n{{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}}\n&lt;/$button&gt;\n&lt;/$list&gt;\n\n&lt;$list filter=\&quot;[[$:/plugins/can/quick/arrownote-top]!contains:tags[$:/tags/AboveStory]]\&quot;&gt;\n&lt;$button class=\&quot;tc-btn-invisible\&quot; actions=\&quot;\&quot;\&quot;&lt;$action-listops $tiddler=\&quot;$:/plugins/can/quick/arrownote-top\&quot; $tags=\&quot;+$:/tags/AboveStory\&quot;/&gt;\&quot;\&quot;\&quot; tooltip=\&quot;Show quick adder above story\&quot;&gt;\n{{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}}\n&lt;/$button&gt;\n&lt;/$list&gt;\n&quot;
+        },
+        &quot;$:/plugins/can/quick/arrownote-top&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/can/quick/arrownote-top&quot;,
+            &quot;tags&quot;: &quot;$:/tags/AboveStory&quot;,
+            &quot;text&quot;: &quot;&lt;div class=\&quot;arrownote-top-container\&quot;&gt;\n{{$:/plugins/can/quick/arrownote-adder}}\n&lt;/div&gt;\n&quot;
+        },
         &quot;$:/plugins/can/quick/documentation&quot;: {
             &quot;title&quot;: &quot;$:/plugins/can/quick/documentation&quot;,
             &quot;caption&quot;: &quot;documentation&quot;,
-            &quot;text&quot;: &quot;!!Basic usage\n\nThe page control button {{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}} or {{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}} toggles visibility of a tiddler, pinned at the top of the Story River, from which to (repeatedly, if desired) create quick tiddlers with a minimum of interaction and mental overhead. It's up to the user to decide how to organize or search for this information later! (Although tiddlers generated through this interface are tagged `quickadd` for easy location.)\n\nType in the text field and hit CTRL-ENTER, or the {{$:/plugins/can/quick/quickadd-big-button.svg}} button, to create a new tiddler. ESCAPE, or the {{$:/plugins/can/quick/escape.svg}} button, cancels the input.\n\nThere is also a field provided in case the user wants to add a title at creation time. ESCAPE here resets only the title; CTRL-ENTER submits the tiddler.\n\nThe new tiddler does //not// get inserted into the Story River.\n\nTiddlers created by this plugin are given a title which is their `created` field expressed in `[UTC]YYYY0MM0DD0hh0mm0ss0XXX` format, if the user does not specify a title.\n\n!!''quickadd'' macro\n\nMost of the work is done by the ''quickadd'' macro.\n\n!!!Parameters\n\n;tags\n:A list of tags to apply to the generated tiddler. Defaults to empty, but the convenience macro ''arrownote'' tags tiddlers with the tag `quickadd`.\n\n;focus\n:Indicates whether the text field of the quickadd interface should take focus when opened. Default: `\&quot;true\&quot;`\n\n;omniparent\n:Sets a value on a field called `omniparent` on the generated tiddler. Used in my personal workflow, but not explicitly useful in this plugin.\n\n;buttonstyle\n:Sets a class on the tiddler submission button. `big` makes the button extra large. Defaults to `small` in the general-purpose ''quickadd'' macro, but the convenience macro ''arrownote'' specifies `big`.\n\n;endstate\n:Value assigned to a field called `quickadd-addtoggle` on the tiddler //containing// the macro call, when submitting or cancelling from the quickadd interface. This can be used with a ''reveal'' widget in the containing tiddler to determine whether the quickadd interface stays open or closes after use. Defaults to `\&quot;open\&quot;`, so that multiple tiddlers can be generated with the fewest UI interactions. This field could conceivably be used for other purposes.\n\n\n!! Convenience macros\n\nThe ''arrownote'' macro simply calls the ''quickadd'' macro with parameters `tags=\&quot;arrownote\&quot; buttonstyle=\&quot;big\&quot;`, and is used in the plugin's provided interface tiddler, ArrowNoteAdder. \n\nThe ''quicksub'' macro calls ''quickadd'', supplementing whatever tags are provided in parameters with the title of the current tiddler. It takes the same parameters as ''quickadd''. \n\n!! ''omnilabel'' macro\n\nThere is also a macro, called ''omnilabel'', that generates labels using the text of tiddlers without intentional titles, This plugin overrides the core ''timeline-title'' macro (defined in $:/core/macros/timeline) to use ''omnilabel'' instead of the tiddler's title in the timeline macro -- which is used by the \&quot;Recent\&quot; sidebar tab. \n&quot;
+            &quot;text&quot;: &quot;\n!!Accessing the UI\n\nThe page control button {{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}} or {{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}} toggles visibility of a tiddler, pinned at the top of the Story River, from which to (repeatedly, if desired) create quick tiddlers with a minimum of interaction and mental overhead. It's up to the user to decide how to organize or search for this information later! (Although tiddlers generated through this interface are tagged `quickadd` for easy location.) To remove this button from the page control toolbar, edit the tiddler [[$:/plugins/can/quick/arrownote-top-toggle-button]] to remove the &lt;&lt;tag $:/tags/PageControls&gt;&gt; tag.\n\nThe ''Quick'' sidebar tab also contains the ''quick'' interface. To remove this tab, edit [[$:/plugins/can/quick/arrownote-sidebar]] to remove the tag &lt;&lt;tag $:/tags/SideBar&gt;&gt;.\n\n!!Basic usage\n\nType in the text field and hit CTRL-ENTER, or the {{$:/plugins/can/quick/fastarrow-circle.svg}}\n button, to create a new tiddler. ESCAPE, or the {{$:/plugins/can/quick/escape.svg}} button, cancels the input.\n\nThere is also a field provided in case the user wants to add a title at creation time. ESCAPE here resets only the title; CTRL-ENTER submits the tiddler.\n\nThe new tiddler does //not// get inserted into the Story River.\n\nTiddlers created by this plugin are given a title which is their `created` field expressed in `[UTC]YYYY0MM0DD0hh0mm0ss0XXX` format, if the user does not specify a title.\n\n!!''quickadd'' macro\n\nMost of the work is done by the ''quickadd'' macro.\n\n!!!Parameters\n\n;tags\n:A list of tags to apply to the generated tiddler. Defaults to empty. The convenience macro ''arrownote'' tags tiddlers with the tag &lt;&lt;tag quickadd&gt;&gt;.\n\n;focus\n:Indicates whether the text field of the quickadd interface should take focus when opened. Default: `\&quot;true\&quot;`\n\n;omniparent\n:Sets a field called `omniparent` on the generated tiddler. Used by the Omni plugin.\n\n;buttonstyle\n:Sets a class on the tiddler submission button. `big` makes the button extra large. Defaults to `small` in the general-purpose ''quickadd'' macro, but the convenience macro ''arrownote'' specifies `big`.\n\n;openstatetid\n:Optional parameter used to specify a tiddler in which to store the `endstate` parameter.\n\n;endstate\n:Value assigned to a field called `quickadd-addtoggle` on the tiddler //containing// the macro call, when submitting or cancelling from the quickadd interface. This can be used with a ''reveal'' widget in the containing tiddler to determine whether the quickadd interface stays open or closes after use. Defaults to `\&quot;open\&quot;`, so that multiple tiddlers can be generated with the fewest UI interactions. This field could conceivably be used for other purposes.\n\n;position\n:A parameter that only matters when ''quickadd'' is used by the Omni plugin. It determines where in an omnibus tiddler's `list` field to insert a newly-added tiddler.\n\n;layout\n:Possibilities: `fullui`, `slimui`, and `subui`, which are the names of macros that give variations on buttons, fields and styling. \n\n\n!! Convenience macros\n\nThe ''arrownote'' macro simply calls the ''quickadd'' macro with parameters `tags=\&quot;quickadd\&quot; buttonstyle=\&quot;big\&quot;`, and is used in the plugin's provided interface tiddler, $:/plugins/can/quick/arrownote-adder. ''arrownote'' takes an optional ''layout'' parameter to pass to ''quickadd''.\n\nThe ''quicksub'' macro calls ''quickadd'', supplementing whatever tags are provided in parameters with the title of the current tiddler. It takes the same parameters as ''quickadd''. \n\n!! ''omnilabel'' macro\n\nThis plugin provides a macro, called ''omnilabel'', that generates primitive labels using a snippet of the text of tiddlers that don't have intentional titles (i.e. ones whose titles are timestamps matching their ''created'' time). This plugin overrides the core ''timeline-title'' macro (defined in $:/core/macros/timeline) to use ''omnilabel'' instead of the tiddler's title in the timeline macro -- which is used by the \&quot;Recent\&quot; sidebar tab. The ''omnilabel'' macro has its flaws; to return to the stock ~TiddlyWiki timeline title display, remove the tag &lt;&lt;tag $:/tags/Macro&gt;&gt; from the tiddler [[$:/plugins/can/quick/timeline-tweak]].\n&quot;
         },
         &quot;$:/plugins/can/quick/checkmark.svg&quot;: {
             &quot;title&quot;: &quot;$:/plugins/can/quick/checkmark.svg&quot;,
@@ -9667,12 +9685,12 @@ Error message and password prompt
             &quot;modified&quot;: &quot;20200705221330000&quot;,
             &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define cancreatedstring() &lt;$list filter=&lt;&lt;currentTiddler&gt;&gt; &gt;&lt;$view field=\&quot;created\&quot; format=\&quot;date\&quot; template=\&quot;[UTC]YYYY0MM0DD0hh0mm0ss0XXX\&quot;/&gt;&lt;/$list&gt;\n\n\\define omnilabel(chars:100)\n&lt;$wikify name=wikicre text=&lt;&lt;cancreatedstring&gt;&gt; &gt;\n&lt;$wikify name=\&quot;can-long-label\&quot; text={{{ [&lt;currentTiddler&gt;get[title]!match&lt;wikicre&gt;] ~[&lt;currentTiddler&gt;get[text]!is[blank]] ~[&lt;currentTiddler&gt;get[title]]}}}&gt;\n\t&lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;\n\t\t&lt;$text text={{{ [&lt;can-long-label&gt;split[]first[$chars$]join[]] }}}/&gt;\n\t&lt;/$link&gt;\n&lt;/$wikify&gt;&lt;/$wikify&gt;\n\\end&quot;
+            &quot;text&quot;: &quot;\\define omnilabel(chars:100)\n&lt;$wikify name=\&quot;can-long-label\&quot; text={{{ [{!!title}!match{!!created}] ~[&lt;currentTiddler&gt;get[text]!is[blank]] ~[&lt;currentTiddler&gt;get[title]]}}}&gt;\n\t&lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;\n\t\t&lt;$text text={{{ [&lt;can-long-label&gt;split[]first[$chars$]join[]] }}}/&gt;\n\t&lt;/$link&gt;\n&lt;/$wikify&gt;\n\\end&quot;
         },
         &quot;$:/plugins/can/quick/quick-macros&quot;: {
             &quot;title&quot;: &quot;$:/plugins/can/quick/quick-macros&quot;,
             &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
-            &quot;text&quot;: &quot;\\define quickbutton(buttonstyle)\n&lt;$button class=\&quot;tc-btn-invisible can-omni-button can-rightedge $buttonstyle$\&quot; actions=\&quot;&lt;&lt;submit-actions&gt;&gt; &lt;&lt;reset-actions&gt;&gt;\&quot;&gt;\n{{$:/plugins/can/quick/fastarrow-circle.svg}}\n&lt;/$button&gt;\n\\end\n\n\\define quickresetbutton(buttonstyle) &lt;$button class=\&quot;can-omni-button can-leftedge $buttonstyle$ tc-btn-invisible\&quot; actions=&lt;&lt;reset-actions&gt;&gt; &gt;{{$:/plugins/can/quick/escape.svg}}&lt;/$button&gt;\n\n\\define quicktitle()\n&lt;div class=\&quot;can-quickadd-titleadder\&quot;&gt;\n&lt;$keyboard tag=\&quot;div\&quot; class=\&quot;can-keyboard-wide\&quot; key=\&quot;ctrl-enter\&quot; actions='&lt;&lt;submit-actions&gt;&gt;&lt;&lt;reset-actions&gt;&gt;' &gt;\n&lt;$keyboard tag=\&quot;div\&quot; class=\&quot;can-keyboard-wide\&quot; key=\&quot;cmd-enter\&quot; actions='&lt;&lt;submit-actions&gt;&gt;&lt;&lt;reset-actions&gt;&gt;' &gt;\n&lt;$keyboard tag=\&quot;div\&quot; class=\&quot;can-keyboard-wide\&quot; key=\&quot;escape\&quot; actions=\&quot;&lt;$action-setfield $tiddler=&lt;&lt;quickstate&gt;&gt; $field='edittitle' /&gt;\&quot;&gt;\n&lt;$edit-text class=\&quot;can-quickadd-titleedit\&quot; tiddler=&lt;&lt;quickstate&gt;&gt; field=edittitle placeholder=\&quot;Add a title\&quot;/&gt;\n&lt;/$keyboard&gt;&lt;/$keyboard&gt;&lt;/$keyboard&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; stateTitle=&lt;&lt;quickstate&gt;&gt; stateField=\&quot;edittitle\&quot; text=\&quot;\&quot;&gt;\n&lt;$button class=\&quot;can-omni-button tiny tc-btn-invisible\&quot; actions=\&quot;&lt;$action-setfield $tiddler=&lt;&lt;quickstate&gt;&gt; $field='edittitle'/&gt;\&quot;&gt;{{$:/plugins/can/quick/escape.svg}}&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;/div&gt;\n\\end\n\n\\define quicktext()\n&lt;$keyboard tag=\&quot;div\&quot; class=\&quot;can-keyboard-wide\&quot; key=\&quot;ctrl-enter\&quot; actions=\&quot;&lt;&lt;submit-actions&gt;&gt; &lt;&lt;reset-actions&gt;&gt;\&quot; &gt;\n&lt;$keyboard tag=\&quot;div\&quot; class=\&quot;can-keyboard-wide\&quot; key=\&quot;cmd-enter\&quot; actions=\&quot;&lt;&lt;submit-actions&gt;&gt; &lt;&lt;reset-actions&gt;&gt;\&quot; &gt;\n&lt;$keyboard tag=\&quot;div\&quot; class=\&quot;can-keyboard-wide\&quot; key=\&quot;escape\&quot; actions=\&quot;&lt;&lt;reset-actions&gt;&gt;\&quot; &gt;\n&lt;$edit-text class=\&quot;can-quickadd-textarea\&quot; tiddler=&lt;&lt;quickstate&gt;&gt; field=\&quot;text\&quot; default=\&quot;\&quot; placeholder=\&quot;Another One Bites the Dust\&quot; rows=\&quot;1\&quot; minHeight=\&quot;0\&quot; focus=&lt;&lt;focus&gt;&gt;/&gt;\n&lt;/$keyboard&gt;&lt;/$keyboard&gt;&lt;/$keyboard&gt;\n\\end\n\n\\define quickstate() $:/temp/can-quickadd/$(currentTiddler)$\n\n\\define omni-inlist() &lt;$action-listops $tiddler=&lt;&lt;__omniparent__&gt;&gt; $subfilter='+[insertbefore:contTiddler{!!savetitle}] +[move{!!savetitle}]'/&gt;\n\n\\define omni-listtop() &lt;$action-listops $tiddler=&lt;&lt;__omniparent__&gt;&gt; $subfilter='[{!!savetitle}] +[putfirst[]]'/&gt;\n\n\\define quickadd(tags:\&quot;\&quot; omniparent:\&quot;\&quot; focus:\&quot;true\&quot; buttonstyle:\&quot;small\&quot; endstate:\&quot;open\&quot; position:\&quot;omni-inlist\&quot; statefield:\&quot;quickadd-addtoggle\&quot; layout:\&quot;fullui\&quot;)\n&lt;$set name=contTiddlerFilt filter=\&quot;[&lt;currentTiddler&gt;]\&quot; &gt;\n&lt;$vars contTiddler=&lt;&lt;currentTiddler&gt;&gt; focus=$focus$ layout=$layout$ subTags=&lt;&lt;__tags__&gt;&gt; omniParent=\&quot;$omniparent$\&quot;&gt;\n&lt;$set name=omniParBrak  filter=\&quot;[&lt;omniParent&gt;]\&quot; &gt;\n&lt;$set name=\&quot;submit-actions\&quot; value=\&quot;&lt;$tiddler tiddler=&lt;&lt;quickstate&gt;&gt; &gt;&lt;$set name=theTime value=&lt;&lt;now [UTC]YYYY0MM0DD0hh0mm0ss0XXX&gt;&gt;&gt;&lt;$set name=newtitle value={{!!edittitle}} emptyValue=&lt;&lt;theTime&gt;&gt; &gt;&lt;$action-setfield newtitle=&lt;&lt;newtitle&gt;&gt;/&gt;&lt;$action-createtiddler $basetitle={{!!newtitle}} $savetitle=!!savetitle text={{!!text}} tags=&lt;&lt;subTags&gt;&gt; created=&lt;&lt;theTime&gt;&gt; omniparent=&lt;&lt;omniParBrak&gt;&gt; /&gt;&lt;$macrocall $name=$position$/&gt;&lt;$action-setfield $tiddler=&lt;&lt;contTiddler&gt;&gt; $field=$statefield$ $value=$endstate$ $timestamp='no'/&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$tiddler&gt;&lt;$action-sendmessage $message='tm-auto-save-wiki'/&gt;\&quot; &gt;\n&lt;$set name=\&quot;reset-actions\&quot; value=\&quot;&lt;$tiddler tiddler=&lt;&lt;quickstate&gt;&gt; &gt;&lt;$action-setfield $field=edittitle/&gt;&lt;$action-setfield text=''/&gt;&lt;$action-setfield $tiddler=&lt;&lt;contTiddler&gt;&gt; $field=$statefield$ $value=$endstate$ $timestamp='no' /&gt;&lt;/$tiddler&gt;\&quot; &gt;\n&lt;&lt;quickui layout:$layout$ buttonstyle:$buttonstyle$&gt;&gt;\n&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$vars&gt;&lt;/$set&gt;\n\\end\n\n\\define quickui(buttonstyle layout)\n&lt;&lt;$layout$ buttonstyle:$buttonstyle$&gt;&gt;\n\\end\n\n\\define fullui(buttonstyle)\n&lt;div class=\&quot;can-quickadd fullui\&quot;&gt;\t\n\t&lt;&lt;quickresetbutton buttonstyle:\&quot;small\&quot;&gt;&gt;\n\t&lt;&lt;quicktext&gt;&gt;\n\t&lt;div class=\&quot;can-quickadd-btmrow\&quot;&gt;\n\t\t&lt;&lt;quicktitle&gt;&gt;\n\t\t&lt;&lt;quickbutton buttonstyle:$buttonstyle$ &gt;&gt;\n\t&lt;/div&gt;\n&lt;/div&gt;\n\\end\n\n\\define slimui()\n&lt;div class=\&quot;can-quickadd slim\&quot;&gt;\t\n\t&lt;&lt;quickresetbutton buttonstyle:\&quot;small\&quot;&gt;&gt;\n\t&lt;&lt;quicktext&gt;&gt;\n\t&lt;&lt;quickbutton buttonstyle:\&quot;small\&quot; &gt;&gt;\n&lt;/div&gt;\n\\end\n\n\\define subui()\n&lt;div class=\&quot;can-quickadd sub\&quot;&gt;\t\n\t&lt;&lt;quicktext&gt;&gt;\n\t&lt;div class=\&quot;can-quickadd-btmrow\&quot;&gt;\n\t\t&lt;&lt;quicktitle&gt;&gt;\n\t\t&lt;&lt;quickbutton buttonstyle:\&quot;big\&quot; &gt;&gt;\n\t&lt;/div&gt;\n&lt;/div&gt;\n\\end\n\n\n\\define arrownote(layout:\&quot;fullui\&quot;)\n&lt;$macrocall $name=\&quot;quickadd\&quot; tags=\&quot;quickadd\&quot; buttonstyle=\&quot;big\&quot; layout=$layout$ /&gt;\n\\end\n\n\\define quicksub(tags omniparent focus:\&quot;true\&quot; buttonstyle endstate) \n&lt;$macrocall $name=\&quot;quickadd\&quot; tags=\&quot;[[$(currentTiddler)$]] $tags$\&quot; omniparent=$omniparent$ focus=$focus$ buttonstyle=$buttonstyle$ endstate=$endstate$ /&gt;\n\\end\n&quot;
+            &quot;text&quot;: &quot;\\define quickbutton(buttonstyle)\n&lt;$button class=\&quot;tc-btn-invisible can-omni-button can-rightedge $buttonstyle$\&quot; actions=\&quot;&lt;&lt;submit-actions&gt;&gt; &lt;&lt;reset-actions&gt;&gt;\&quot;&gt;\n{{$:/plugins/can/quick/fastarrow-circle.svg}}\n&lt;/$button&gt;\n\\end\n\n\\define quickresetbutton(buttonstyle) &lt;$button class=\&quot;can-omni-button can-leftedge $buttonstyle$ tc-btn-invisible\&quot; actions=&lt;&lt;reset-actions&gt;&gt; &gt;{{$:/plugins/can/quick/escape.svg}}&lt;/$button&gt;\n\n\\define quicktitle()\n&lt;div class=\&quot;can-quickadd-titleadder\&quot;&gt;\n&lt;$keyboard tag=\&quot;div\&quot; class=\&quot;can-keyboard-wide\&quot; key=\&quot;ctrl-enter\&quot; actions='&lt;&lt;submit-actions&gt;&gt;&lt;&lt;reset-actions&gt;&gt;' &gt;\n&lt;$keyboard tag=\&quot;div\&quot; class=\&quot;can-keyboard-wide\&quot; key=\&quot;cmd-enter\&quot; actions='&lt;&lt;submit-actions&gt;&gt;&lt;&lt;reset-actions&gt;&gt;' &gt;\n&lt;$keyboard tag=\&quot;div\&quot; class=\&quot;can-keyboard-wide\&quot; key=\&quot;escape\&quot; actions=\&quot;&lt;$action-setfield $tiddler=&lt;&lt;quickstatetid&gt;&gt; $field='edittitle' /&gt;\&quot;&gt;\n&lt;$edit-text class=\&quot;can-quickadd-titleedit\&quot; tiddler=&lt;&lt;quickstatetid&gt;&gt; field=edittitle placeholder=\&quot;Optional title\&quot;/&gt;\n&lt;/$keyboard&gt;&lt;/$keyboard&gt;&lt;/$keyboard&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; stateTitle=&lt;&lt;quickstatetid&gt;&gt; stateField=\&quot;edittitle\&quot; text=\&quot;\&quot;&gt;\n&lt;$button class=\&quot;can-omni-button tiny tc-btn-invisible\&quot; actions=\&quot;&lt;$action-setfield $tiddler=&lt;&lt;quickstatetid&gt;&gt; $field='edittitle'/&gt;\&quot;&gt;{{$:/plugins/can/quick/escape.svg}}&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;/div&gt;\n\\end\n\n\\define quicktext()\n&lt;$keyboard tag=\&quot;div\&quot; class=\&quot;can-keyboard-wide\&quot; key=\&quot;ctrl-enter\&quot; actions=\&quot;&lt;&lt;submit-actions&gt;&gt; &lt;&lt;reset-actions&gt;&gt;\&quot; &gt;\n&lt;$keyboard tag=\&quot;div\&quot; class=\&quot;can-keyboard-wide\&quot; key=\&quot;cmd-enter\&quot; actions=\&quot;&lt;&lt;submit-actions&gt;&gt; &lt;&lt;reset-actions&gt;&gt;\&quot; &gt;\n&lt;$keyboard tag=\&quot;div\&quot; class=\&quot;can-keyboard-wide\&quot; key=\&quot;escape\&quot; actions=\&quot;&lt;&lt;reset-actions&gt;&gt;\&quot; &gt;\n&lt;$edit-text class=\&quot;can-quickadd-textarea\&quot; tiddler=&lt;&lt;quickstatetid&gt;&gt; field=\&quot;text\&quot; default=\&quot;\&quot; placeholder=\&quot;Enter quick text here\&quot; rows=\&quot;1\&quot; minHeight=\&quot;0\&quot; focus=&lt;&lt;focus&gt;&gt;/&gt;\n&lt;/$keyboard&gt;&lt;/$keyboard&gt;&lt;/$keyboard&gt;\n\\end\n\n\n\\define omni-inlist() &lt;$action-listops $tiddler=&lt;&lt;__omniparent__&gt;&gt; $subfilter='+[insertbefore:contTiddler{!!savetitle}] +[move{!!savetitle}]'/&gt;\n\n\\define omni-listtop() &lt;$action-listops $tiddler=&lt;&lt;__omniparent__&gt;&gt; $subfilter='[{!!savetitle}] +[putfirst[]]'/&gt;\n\n\\define quickstate() $:/state/can/quick/$(currentTiddler)$\n\n\\define quickadd(tags:\&quot;\&quot; omniparent:\&quot;\&quot; focus:\&quot;true\&quot; buttonstyle:\&quot;small\&quot; openstatetid endstate:\&quot;open\&quot; position:\&quot;omni-inlist\&quot; layout:\&quot;fullui\&quot; quickstatetid)\n&lt;$set name=quickstatetid value=\&quot;$quickstatetid$\&quot; emptyValue=\&quot;$(quickstate)$\&quot; &gt;\n&lt;$set name=contTiddlerFilt filter=\&quot;[&lt;currentTiddler&gt;]\&quot; &gt;\n&lt;$vars contTiddler=&lt;&lt;currentTiddler&gt;&gt; focus=$focus$ layout=$layout$ subTags=&lt;&lt;__tags__&gt;&gt; omniParent=\&quot;$omniparent$\&quot; openstatetid=\&quot;$openstatetid$\&quot; &gt;\n&lt;$set name=omniParBrak  filter=\&quot;[&lt;omniParent&gt;]\&quot; &gt;\n&lt;$set name=\&quot;submit-actions\&quot; value=\&quot;&lt;$tiddler tiddler=&lt;&lt;quickstatetid&gt;&gt; &gt;&lt;$set name=theTime value=&lt;&lt;now [UTC]YYYY0MM0DD0hh0mm0ss0XXX&gt;&gt;&gt;&lt;$set name=newtitle value={{!!edittitle}} emptyValue=&lt;&lt;theTime&gt;&gt; &gt;&lt;$action-setfield newtitle=&lt;&lt;newtitle&gt;&gt;/&gt;&lt;$action-createtiddler $basetitle={{!!newtitle}} $savetitle=!!savetitle text={{!!text}} tags=&lt;&lt;subTags&gt;&gt; created=&lt;&lt;theTime&gt;&gt; omniparent=&lt;&lt;omniParBrak&gt;&gt; /&gt;&lt;$macrocall $name=$position$/&gt;&lt;$action-setfield $tiddler=&lt;&lt;openstatetid&gt;&gt; text=$endstate$/&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$tiddler&gt;&lt;$action-sendmessage $message='tm-auto-save-wiki'/&gt;\&quot; &gt;\n&lt;$set name=\&quot;reset-actions\&quot; value=\&quot;&lt;$tiddler tiddler=&lt;&lt;quickstatetid&gt;&gt; &gt;&lt;$action-setfield $field=edittitle/&gt;&lt;$action-setfield text=''/&gt;&lt;$action-setfield $tiddler=&lt;&lt;openstatetid&gt;&gt; text=$endstate$/&gt;&lt;/$tiddler&gt;\&quot; &gt;\n&lt;&lt;quickui layout:$layout$ buttonstyle:$buttonstyle$&gt;&gt;\n&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&lt;/$vars&gt;&lt;/$set&gt;&lt;/$set&gt;\n\\end\n\n\\define quickui(buttonstyle layout)\n&lt;&lt;$layout$ buttonstyle:$buttonstyle$&gt;&gt;\n\\end\n\n\\define fullui(buttonstyle)\n&lt;div class=\&quot;can-quickadd fullui\&quot;&gt;\t\n\t&lt;&lt;quickresetbutton buttonstyle:\&quot;small\&quot;&gt;&gt;\n\t&lt;&lt;quicktext&gt;&gt;\n\t&lt;div class=\&quot;can-quickadd-btmrow\&quot;&gt;\n\t\t&lt;&lt;quicktitle&gt;&gt;\n\t\t&lt;&lt;quickbutton buttonstyle:$buttonstyle$ &gt;&gt;\n\t&lt;/div&gt;\n&lt;/div&gt;\n\\end\n\n\\define slimui()\n&lt;div class=\&quot;can-quickadd slim\&quot;&gt;\t\n\t&lt;&lt;quickresetbutton buttonstyle:\&quot;small\&quot;&gt;&gt;\n\t&lt;&lt;quicktext&gt;&gt;\n\t&lt;&lt;quickbutton buttonstyle:\&quot;small\&quot; &gt;&gt;\n&lt;/div&gt;\n\\end\n\n\\define subui()\n&lt;div class=\&quot;can-quickadd sub\&quot;&gt;\t\n\t&lt;&lt;quicktext&gt;&gt;\n\t&lt;div class=\&quot;can-quickadd-btmrow\&quot;&gt;\n\t\t&lt;&lt;quicktitle&gt;&gt;\n\t\t&lt;&lt;quickbutton buttonstyle:\&quot;big\&quot; &gt;&gt;\n\t&lt;/div&gt;\n&lt;/div&gt;\n\\end\n\n\n\\define arrownote(layout:\&quot;fullui\&quot;)\n&lt;$macrocall $name=\&quot;quickadd\&quot; tags=\&quot;quickadd\&quot; buttonstyle=\&quot;big\&quot; layout=$layout$ /&gt;\n\\end\n\n\\define quicksub(tags omniparent focus:\&quot;true\&quot; buttonstyle endstate) \n&lt;$macrocall $name=\&quot;quickadd\&quot; tags=\&quot;[[$(currentTiddler)$]] $tags$\&quot; omniparent=$omniparent$ focus=$focus$ buttonstyle=$buttonstyle$ endstate=$endstate$ /&gt;\n\\end\n&quot;
         },
         &quot;$:/plugins/can/quick/stylesheet&quot;: {
             &quot;title&quot;: &quot;$:/plugins/can/quick/stylesheet&quot;,
@@ -9681,7 +9699,7 @@ Error message and password prompt
             &quot;modified&quot;: &quot;20200706205716530&quot;,
             &quot;modifier&quot;: &quot;chris&quot;,
             &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
-            &quot;text&quot;: &quot;\n.can-quickadd {\nmargin-top: 1em;\n}\n\n.can-quickadd.slim {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n\n.can-quickadd-textarea {\nwidth: 100%;\nmargin: 0.4em 0;\n}\n\n.can-quickadd-titleedit, .can-quickadd-textarea {\noutline-color: #eee;\nborder: 1px solid #eee;\nwidth: 100%;\n}\n\n.can-quickadd-titleedit {\nmargin-top: 0.5em;\n}\n\n.can-quickadd-btmrow {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n\n.can-keyboard-wide {position: relative; width: 100%;}\n\n.can-quickadd-titleadder {\ndisplay: flex;\nflex-direction: row;\n}\n\n.can-title-cancel {\nmargin-right: 1em;\n}\n\n.can-omni-button {\nmargin-right: 0.4em;\nflex: 0 0 auto;\n}\n\n\n.can-omni-button svg, .can-omni-button.small svg {width: 12pt; height: 12pt;}\n\n.can-omni-button.big svg {width: 16pt; height: 16pt;}\n\n.can-omni-button.tiny svg {width: 10pt; height: 10pt;}\n\n.can-omni-button.none {display: none;}\n\n.can-leftedge {\n  margin-left: 0;\n  padding-left: 0;\n}\n\n.can-rightedge {\n  margin-right: 0;\n  padding-right: 0;\n}&quot;
+            &quot;text&quot;: &quot;\n.can-quickadd {\nmargin-top: 1em;\n}\n\n.can-quickadd.slim {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n\n.can-quickadd-textarea {\nwidth: 100%;\nmargin: 0.4em 0;\n}\n\n.can-quickadd-titleedit, .can-quickadd-textarea {\noutline-color: #eee;\nborder: 1px solid #eee;\nwidth: 100%;\n}\n\n.can-quickadd-titleedit {\nmargin-top: 0.5em;\n}\n\n.can-quickadd-btmrow {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n\n.can-keyboard-wide {position: relative; width: 100%;}\n\n.can-quickadd-titleadder {\ndisplay: flex;\nflex-direction: row;\n}\n\n.can-title-cancel {\nmargin-right: 1em;\n}\n\n.can-omni-button {\nmargin-right: 0.4em;\nflex: 0 0 auto;\n}\n\n.arrownote-top-container {\n    border-radius: 1em;\n    padding: 0 1em 1em 1em;\n    background-color: rgba(255,255,255,0.8);\n}\n\n.tc-topbar .arrownote-top-container svg {\n    fill: #666699;\n}\n.can-omni-button svg, .can-omni-button.small svg {width: 12pt; height: 12pt;}\n\n.can-omni-button.big svg {width: 16pt; height: 16pt;}\n\n.can-omni-button.tiny svg {width: 10pt; height: 10pt;}\n\n.can-omni-button.none {display: none;}\n\n.can-leftedge {\n  margin-left: 0;\n  padding-left: 0;\n}\n\n.can-rightedge {\n  margin-right: 0;\n  padding-right: 0;\n}&quot;
         },
         &quot;$:/plugins/can/quick/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/can/quick/readme&quot;,
@@ -9692,11 +9710,6 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/plugins/can/quick/timeline-tweak&quot;,
             &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
             &quot;text&quot;: &quot;\\define timeline-title()\n\\whitespace trim\n&lt;!-- Overrides the macro of the same name defined in $:/core/macros/timeline --&gt;\n&lt;&lt;omnilabel chars:200&gt;&gt;\n\\end\n&quot;
-        },
-        &quot;/Users/chris/Downloads/SynologyDrive/Tiddly/TW5-quick/plugins/quick/topadd.txt&quot;: {
-            &quot;title&quot;: &quot;/Users/chris/Downloads/SynologyDrive/Tiddly/TW5-quick/plugins/quick/topadd.txt&quot;,
-            &quot;text&quot;: &quot;topadd\n\nif topadd=true, put at the top. else put after conttiddler.\n\nin quick-macros, add:\n\n\\define omni-ontop() {\n\&quot;&lt;$action-listops $tiddler=&lt;&lt;__omniparent__&gt;&gt; $subfilter='{!!savetitle} +[putfirst[]]'/&gt;\&quot;\n}\n\\end\n\n\\define omni-afteritem() {\n\&quot;&lt;$action-listops $tiddler=&lt;&lt;__omniparent__&gt;&gt; $subfilter='+[insertbefore:contTiddler{!!savetitle}] +[move{!!savetitle}]'/&gt;\&quot;\n}\n\\end\n\n\n\\define omni-positioner() $(position)$\n\n(or a debugged version), \n\nIn omnibus-macros:\n\n change the quickadd macrocall to include the position parameter.&quot;,
-            &quot;type&quot;: &quot;text/plain&quot;
         }
     }
 }</pre>
@@ -9706,6 +9719,9 @@ Error message and password prompt
 </div>
 <div title="$:/SiteTitle" type="text/vnd.tiddlywiki">
 <pre>CAN Quick</pre>
+</div>
+<div created="20201118165003525" modified="20201118165012619" newtitle="20201118165012616" savetitle="20201118165012616" title="$:/state/can/quick/$:/plugins/can/quick/arrownote-adder">
+<pre></pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
@@ -9718,11 +9734,55 @@ Error message and password prompt
     &quot;tiddlers&quot;: {
         &quot;$:/info/browser&quot;: {
             &quot;title&quot;: &quot;$:/info/browser&quot;,
-            &quot;text&quot;: &quot;no&quot;
+            &quot;text&quot;: &quot;yes&quot;
         },
         &quot;$:/info/node&quot;: {
             &quot;title&quot;: &quot;$:/info/node&quot;,
-            &quot;text&quot;: &quot;yes&quot;
+            &quot;text&quot;: &quot;no&quot;
+        },
+        &quot;$:/info/url/full&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/full&quot;,
+            &quot;text&quot;: &quot;file:///Users/chris/Downloads/SynologyDrive/Tiddly/TW5-quick/output/index.html&quot;
+        },
+        &quot;$:/info/url/host&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/host&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/info/url/hostname&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/info/url/protocol&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
+            &quot;text&quot;: &quot;file:&quot;
+        },
+        &quot;$:/info/url/port&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/port&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/info/url/pathname&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
+            &quot;text&quot;: &quot;/Users/chris/Downloads/SynologyDrive/Tiddly/TW5-quick/output/index.html&quot;
+        },
+        &quot;$:/info/url/search&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/search&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/info/url/origin&quot;: {
+            &quot;title&quot;: &quot;$:/info/url/origin&quot;,
+            &quot;text&quot;: &quot;null&quot;
+        },
+        &quot;$:/info/browser/screen/width&quot;: {
+            &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
+            &quot;text&quot;: &quot;1280&quot;
+        },
+        &quot;$:/info/browser/screen/height&quot;: {
+            &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
+            &quot;text&quot;: &quot;800&quot;
+        },
+        &quot;$:/info/browser/language&quot;: {
+            &quot;title&quot;: &quot;$:/info/browser/language&quot;,
+            &quot;text&quot;: &quot;en-CA&quot;
         }
     }
 }</pre>
@@ -9836,6 +9896,12 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20201118165007770" modified="20201118165007775" omniparent="" tags="quickadd" title="20201118165007770">
+<pre>I want to do one tiddler</pre>
+</div>
+<div created="20201118165012616" modified="20201118165012618" omniparent="" tags="quickadd" title="20201118165012616">
+<pre>And then another</pre>
+</div>
 <div title="Basic usage">
 <pre>Type in the text field and hit CTRL-ENTER, or the {{$:/plugins/can/quick/fastarrow-circle.svg}} button, to create a new tiddler. ESCAPE, or the {{$:/plugins/can/quick/escape.svg}} button, cancels the input.
 
@@ -9848,7 +9914,7 @@ Tiddlers created by this plugin are given a title which is their `created` field
 <div title="Demos">
 <pre>''Pinned at the top of the Story River:''
 
-The sidebar page control button {{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}} (or {{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}}, depending on the state) toggles visibility of a tiddler, pinned at the top of the Story River, from which to (repeatedly, if desired) create quick tiddlers with a minimum of interaction and mental overhead. It's up to the user to decide how to organize or search for this information later! (Although tiddlers generated through this interface are tagged `quickadd` for easy location.)
+The sidebar page control button {{$:/plugins/can/quick/arrownote-top-toggle-button}} toggles a tiddler at the top of the Story River, from which to (repeatedly, if desired) create quick tiddlers with a minimum of interaction and mental overhead. It's up to the user to decide how to organize or search for this information later! (Although tiddlers generated through this interface are tagged `quickadd` for easy location.)
 
 The interface has (currently) two ui styles, one slimmer than the other. It can be embedded into a tiddler using a macro.
 
@@ -9863,6 +9929,12 @@ The interface has (currently) two ui styles, one slimmer than the other. It can 
 {{Slim UI demo}}
 
 (that was a transclusion of the tiddler [[Slim UI demo]])
+
+''Sub-UI:''
+
+{{Sub-UI demo}}
+
+(that was a transclusion of the tiddler [[Sub-UI demo]])
 
 ''In the sidebar:''
 
@@ -9923,9 +9995,9 @@ Macros defined in shadow tiddlers
 * [[Introduction]]
 * [[Basic usage]]
 * [[Demos]]
-* [[The plugin|$:/plugins/can/quick]]
+* [[$:/plugins/can/quick]] (see the ''documentation'' tab)
 * [[Wishlist 2020-07-10]]
-
+* [[Wishlist 2020-11-18]]
 </pre>
 </div>
 <div title="Slim UI demo">
@@ -9933,10 +10005,21 @@ Macros defined in shadow tiddlers
 
 &lt;&lt;quickadd layout:&quot;slimui&quot;&gt;&gt;</pre>
 </div>
+<div title="Sub-UI demo">
+<pre>This tiddler demonstrates using the ''quickadd'' macro with layout `subui`.
+
+&lt;&lt;quickadd layout:&quot;subui&quot;&gt;&gt;</pre>
+</div>
 <div title="Wishlist 2020-07-10">
 <pre>* button captions, aria-labels etc.
 * improve icons
 * add config options
+</pre>
+</div>
+<div title="Wishlist 2020-11-18">
+<pre>* button captions, aria-labels etc.
+* add config options
+* improved ''omnilabel'' macro
 </pre>
 </div>
 

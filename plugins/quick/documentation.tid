@@ -1,11 +1,17 @@
 title: $:/plugins/can/quick/documentation
 caption: documentation
 
+
+!!Accessing the UI
+
+The page control button {{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}} or {{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}} toggles visibility of a tiddler, pinned at the top of the Story River, from which to (repeatedly, if desired) create quick tiddlers with a minimum of interaction and mental overhead. It's up to the user to decide how to organize or search for this information later! (Although tiddlers generated through this interface are tagged `quickadd` for easy location.) To remove this button from the page control toolbar, edit the tiddler [[$:/plugins/can/quick/arrownote-top-toggle-button]] to remove the <<tag $:/tags/PageControls>> tag.
+
+The ''Quick'' sidebar tab also contains the ''quick'' interface. To remove this tab, edit [[$:/plugins/can/quick/arrownote-sidebar]] to remove the tag <<tag $:/tags/SideBar>>.
+
 !!Basic usage
 
-The page control button {{$:/plugins/can/quick/quickadd-toolbar-btn-light.svg}} or {{$:/plugins/can/quick/quickadd-toolbar-btn-dark.svg}} toggles visibility of a tiddler, pinned at the top of the Story River, from which to (repeatedly, if desired) create quick tiddlers with a minimum of interaction and mental overhead. It's up to the user to decide how to organize or search for this information later! (Although tiddlers generated through this interface are tagged `quickadd` for easy location.)
-
-Type in the text field and hit CTRL-ENTER, or the {{$:/plugins/can/quick/quickadd-big-button.svg}} button, to create a new tiddler. ESCAPE, or the {{$:/plugins/can/quick/escape.svg}} button, cancels the input.
+Type in the text field and hit CTRL-ENTER, or the {{$:/plugins/can/quick/fastarrow-circle.svg}}
+ button, to create a new tiddler. ESCAPE, or the {{$:/plugins/can/quick/escape.svg}} button, cancels the input.
 
 There is also a field provided in case the user wants to add a title at creation time. ESCAPE here resets only the title; CTRL-ENTER submits the tiddler.
 
@@ -20,27 +26,36 @@ Most of the work is done by the ''quickadd'' macro.
 !!!Parameters
 
 ;tags
-:A list of tags to apply to the generated tiddler. Defaults to empty, but the convenience macro ''arrownote'' tags tiddlers with the tag `quickadd`.
+:A list of tags to apply to the generated tiddler. Defaults to empty. The convenience macro ''arrownote'' tags tiddlers with the tag <<tag quickadd>>.
 
 ;focus
 :Indicates whether the text field of the quickadd interface should take focus when opened. Default: `"true"`
 
 ;omniparent
-:Sets a value on a field called `omniparent` on the generated tiddler. Used in my personal workflow, but not explicitly useful in this plugin.
+:Sets a field called `omniparent` on the generated tiddler. Used by the Omni plugin.
 
 ;buttonstyle
 :Sets a class on the tiddler submission button. `big` makes the button extra large. Defaults to `small` in the general-purpose ''quickadd'' macro, but the convenience macro ''arrownote'' specifies `big`.
 
+;openstatetid
+:Optional parameter used to specify a tiddler in which to store the `endstate` parameter.
+
 ;endstate
 :Value assigned to a field called `quickadd-addtoggle` on the tiddler //containing// the macro call, when submitting or cancelling from the quickadd interface. This can be used with a ''reveal'' widget in the containing tiddler to determine whether the quickadd interface stays open or closes after use. Defaults to `"open"`, so that multiple tiddlers can be generated with the fewest UI interactions. This field could conceivably be used for other purposes.
+
+;position
+:A parameter that only matters when ''quickadd'' is used by the Omni plugin. It determines where in an omnibus tiddler's `list` field to insert a newly-added tiddler.
+
+;layout
+:Possibilities: `fullui`, `slimui`, and `subui`, which are the names of macros that give variations on buttons, fields and styling. 
 
 
 !! Convenience macros
 
-The ''arrownote'' macro simply calls the ''quickadd'' macro with parameters `tags="arrownote" buttonstyle="big"`, and is used in the plugin's provided interface tiddler, ArrowNoteAdder. 
+The ''arrownote'' macro simply calls the ''quickadd'' macro with parameters `tags="quickadd" buttonstyle="big"`, and is used in the plugin's provided interface tiddler, $:/plugins/can/quick/arrownote-adder. ''arrownote'' takes an optional ''layout'' parameter to pass to ''quickadd''.
 
 The ''quicksub'' macro calls ''quickadd'', supplementing whatever tags are provided in parameters with the title of the current tiddler. It takes the same parameters as ''quickadd''. 
 
 !! ''omnilabel'' macro
 
-There is also a macro, called ''omnilabel'', that generates labels using the text of tiddlers without intentional titles, This plugin overrides the core ''timeline-title'' macro (defined in $:/core/macros/timeline) to use ''omnilabel'' instead of the tiddler's title in the timeline macro -- which is used by the "Recent" sidebar tab. 
+This plugin provides a macro, called ''omnilabel'', that generates primitive labels using a snippet of the text of tiddlers that don't have intentional titles (i.e. ones whose titles are timestamps matching their ''created'' time). This plugin overrides the core ''timeline-title'' macro (defined in $:/core/macros/timeline) to use ''omnilabel'' instead of the tiddler's title in the timeline macro -- which is used by the "Recent" sidebar tab. The ''omnilabel'' macro has its flaws; to return to the stock ~TiddlyWiki timeline title display, remove the tag <<tag $:/tags/Macro>> from the tiddler [[$:/plugins/can/quick/timeline-tweak]].
